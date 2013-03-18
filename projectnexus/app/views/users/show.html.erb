@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First:</b>
+  <%= @user.first %>
+</p>
+
+<p>
+  <b>Middle:</b>
+  <%= @user.middle %>
+</p>
+
+<p>
+  <b>Last:</b>
+  <%= @user.last %>
+</p>
+
+<p>
+  <b>Honorific:</b>
+  <%= @user.honorific %>
+</p>
+
+<p>
+  <b>Suffix:</b>
+  <%= @user.suffix %>
+</p>
+
+<p>
+  <b>Preferredname:</b>
+  <%= @user.preferredname %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Address1:</b>
+  <%= @user.address1 %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%= @user.address2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @user.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @user.state %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%= @user.zipcode %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

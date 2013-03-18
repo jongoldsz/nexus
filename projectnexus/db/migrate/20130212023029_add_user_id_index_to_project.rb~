@@ -1,0 +1,4 @@
+class AddUserIdIndexToProject < ActiveRecord::Migration
+  def change
+  end
+end

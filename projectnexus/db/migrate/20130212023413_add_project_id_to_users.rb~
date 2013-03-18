@@ -1,0 +1,4 @@
+class AddProjectIdToUsers < ActiveRecord::Migration
+  def change
+  end
+end
