@@ -1,0 +1,146 @@
+body{ background-color: rgb(230,230,230);}
+
+#header{ background: rgb(45,45,45); height: 122px; border-bottom-width: 4px; border-bottom-style: solid; border-color: rgb(157,203,75) }
+#header_container
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1260px;
+}
+img.header_nexus_logo
+{
+	margin-left: 100px;
+	margin-top: 10px;
+}
+div.header_login
+{
+	float: right;
+	color: white;
+	padding-top: 60px;
+	padding-right: 120px;
+	font-family: Myriad Pro;
+}
+a.header_login_link
+{
+	padding-left: 8px;
+	color: rgb(170,201,86);
+	text-decoration: none;
+	font-size: 16pt;
+}
+#interactive_image
+{
+	background-image: url('../imgs/interactive.png');
+	width: 1260px;
+	height: 695px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#local_projects
+{
+	background-color: rgb(68,68,68);
+	width: 1260px;
+	height: 412px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#nearby_projects
+{
+	/*background-image: url('../imgs/nearby.png');*/
+	background-color: rgb(45,45,45);
+	width: 1260px;
+	height: 404px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#map
+{
+	background-image: url('../imgs/map.png');
+	width: 1260px;
+	height: 526px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#project_developers
+{
+	background-image: url('../imgs/developers.png');
+	width: 1260px;
+	height: 408px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#footer
+{
+	background: rgb(45,45,45);
+	height: 70px;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-color: rgb(157,203,75);
+}
+div.section_title_area
+{
+	
+}
+h1.section_title
+{
+	padding-top: 20px;
+	margin-left: 50px;
+	margin-bottom: 20px;
+	font-family: Myriad Pro;
+	font-weight: 100;
+	font-size: 30pt;
+	color: rgb(204,204,204);
+	text-transform: lowercase;
+}
+div.project_tile
+{
+	width: 245px;
+	height: 280px;
+	background-color: rgb(91,91,91);
+	float: left;
+	margin-left: 50px;
+	margin-right: 10px;
+}
+div.project_tile_title
+{
+	color: rgb(170,201,86);
+	font-family: Myriad Pro;
+	text-transform: lowercase;
+}
+div.project_details
+{
+	padding: 10px;
+	height: 130px;
+	overflow: hidden;
+}
+div.project_tile_pitch
+{
+	height: 95px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-family: Myriad Pro;
+	color: rgb(255,255,255);
+	font-weight: 100;
+	font-size: 11pt;
+	font-stretch:expanded;
+	text-overflow: clip;
+}
+div.project_tile_view_more_link
+{
+	color: rgb(170,201,86);
+	font-family: Myriad Pro;
+	font-size: 10pt;
+	text-transform: lowercase;
+	padding-top: 10px;
+	margin-left: 160px;
+}
+div.project_tile_status
+{
+	width: 245px;
+	height: 7px;
+	background-color: rgb(229,229,229);
+}
+div.project_tile_status_completed
+{
+	height: 7px;
+	background-color: rgb(170,201,86);
+}
