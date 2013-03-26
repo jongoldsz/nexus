@@ -8,6 +8,10 @@ Projectnexus::Application.routes.draw do
   resources :users
   
   root :to => 'index#index'
+  
+  match "/browse" => redirect("/projects")
+  
+  #map.resources :projects, :controller => "browse"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
