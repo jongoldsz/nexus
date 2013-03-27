@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130327202235) do
+ActiveRecord::Schema.define(:version => 20130327204750) do
 
   create_table "blogentries", :force => true do |t|
     t.string   "title"
@@ -46,15 +46,32 @@ ActiveRecord::Schema.define(:version => 20130327202235) do
     t.string   "name"
     t.string   "type"
     t.integer  "downloads"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "project_id"
+    t.integer  "objective_id"
+    t.integer  "comment_id"
+    t.integer  "user_id"
+    t.integer  "task_id"
+    t.integer  "resource_id"
+    t.integer  "blogentry_id"
+  end
+
+  create_table "levels", :force => true do |t|
+    t.string   "name"
+    t.integer  "rank"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "project_id"
   end
 
   create_table "memberships", :force => true do |t|
-    t.integer  "level"
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "level_id"
+    t.integer  "project_id"
+    t.integer  "user_id"
   end
 
   create_table "objectives", :force => true do |t|
@@ -62,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20130327202235) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "project_id"
   end
 
   create_table "projects", :force => true do |t|
@@ -84,6 +102,8 @@ ActiveRecord::Schema.define(:version => 20130327202235) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "project_id"
+    t.integer  "user_id"
   end
 
   create_table "stages", :force => true do |t|
@@ -104,8 +124,11 @@ ActiveRecord::Schema.define(:version => 20130327202235) do
     t.text     "description"
     t.datetime "duedate"
     t.boolean  "status"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "task_id"
+    t.integer  "user_id"
+    t.integer  "objective_id"
   end
 
   create_table "users", :force => true do |t|

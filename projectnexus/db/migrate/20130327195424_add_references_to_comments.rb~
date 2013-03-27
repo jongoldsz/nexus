@@ -1,8 +1,0 @@
-class AddReferencesToComments < ActiveRecord::Migration
-  def change
-      add_column :comments, :user_id, :references
-      add_column :comments, :project_id, :references
-      add_column :comments, :objective_id, :references
-      add_column :comments, :task_id, :references
-  end
-end

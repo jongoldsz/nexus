@@ -1,0 +1,9 @@
+class Level < ActiveRecord::Base
+
+      validates_presence_of :name
+      validates_presence_of :rank
+
+      belongs_to :project
+      has_many :memberships
+  attr_accessible :name, :rank
+end

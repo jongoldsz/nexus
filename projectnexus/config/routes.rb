@@ -1,4 +1,6 @@
 Projectnexus::Application.routes.draw do
+  resources :levels
+
   resources :documents
 
   resources :resources
