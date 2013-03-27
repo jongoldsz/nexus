@@ -7,6 +7,8 @@ class Project < ActiveRecord::Base
 #  validates_presence_of :user_id
 
   belongs_to :user
+  has_many :tags
+  has_one :stage
 
   attr_accessible :description, :name, :pitch, :status, :user_id, :miniimage
 end

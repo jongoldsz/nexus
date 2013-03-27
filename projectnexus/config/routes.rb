@@ -1,4 +1,20 @@
 Projectnexus::Application.routes.draw do
+  resources :documents
+
+  resources :resources
+
+  resources :memberships
+
+  resources :stages
+
+  resources :comments
+
+  resources :tags
+
+  resources :discussions
+
+  resources :blogentries
+
   resources :tasks
 
   resources :objectives
