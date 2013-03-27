@@ -1,0 +1,2 @@
+module ProjectresourcesHelper
+end

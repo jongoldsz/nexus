@@ -1,0 +1,2 @@
+module ProjecttagsHelper
+end

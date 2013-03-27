@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Project:</b>
+  <%= @projectresource.project_id %>
+</p>
+
+<p>
+  <b>Resource:</b>
+  <%= @projectresource.resource_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_projectresource_path(@projectresource) %> |
+<%= link_to 'Back', projectresources_path %>
