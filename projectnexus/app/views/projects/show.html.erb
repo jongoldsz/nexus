@@ -20,6 +20,10 @@
   <%= @project.description %>
 </p>
 
+<p>
+  <b>Owner:</b>
+  <%= @project.user.full_name %>
+</p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

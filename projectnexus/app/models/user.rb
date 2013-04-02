@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
   has_many :blogentries, :foreign_key => "user_id"
   has_many :resources, :foreign_key => "user_id"
 
+  def full_name
+     first + ' ' + last
+  end
+
 end

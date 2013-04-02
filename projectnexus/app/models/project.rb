@@ -4,7 +4,7 @@ class Project < ActiveRecord::Base
   validates_presence_of :pitch
   validates_presence_of :status
   validates_inclusion_of :status, :in=>0..100
-#  validates_presence_of :user_id
+  validates_presence_of :user_id
 
   belongs_to :user, :class_name => User
   has_many :projecttags, :foreign_key => "project_id"
