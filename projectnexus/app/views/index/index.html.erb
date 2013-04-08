@@ -1,18 +1,11 @@
 <html>
 
-  <head>
-    <title>Troy Nexus</title>
-    <link rel="stylesheet" href="public/css/reset.css" />
-    <link rel="stylesheet" href="public/css/global.css" />
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-  </head>
-
   <body>    
-
+	
     <div id="interactive-image">
 		<img src="../imgs/interactive.png">
     </div>
-
+	<%= render :partial=> "tags/list", :collection=>@tags %>
 	<div class="front-projects">
 	
     	<div class='content-wrap clearfix'>
