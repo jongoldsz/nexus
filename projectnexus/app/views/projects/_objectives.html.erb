@@ -1,0 +1,26 @@
+<table class="project_objectives">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% @project.objectives.each do |objective| %>
+  <tr class="objective_header" id="objective_<%= objective.id %>">
+    <td><%= objective.name %></td>
+    <td><%= objective.description %></td>
+  </tr>
+  <tr class="objective_body" id="objective_<%= objective.id %>_tasks">
+    <td colspan=2>
+      <table id="objective_<%= objective.id %>_tasks_table">
+	<% objective.tasks.each do |task| %>
+	<tr>
+	  <td><%= task.name %></td>
+	  <td><%= task.description %></td>
+	</tr>
+	<% end %>
+      </table>
+    </td>
+  </tr>
+<% end %>
+
+</table>

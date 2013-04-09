@@ -27,3 +27,15 @@
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+
+<br/><br/>
+
+<%= render 'objectives' %>
+
+<br/><br/>
+<div class="objectives">
+Objective Name: <input type="text" class="objective_name" /> <br/>
+Objective Description: <input type="text" class="objective_description" /> <br/>
+<input type="hidden" class="project_id" value="<%= @project.id %>" />
+<input type="button" class="create_objective" value="Create Objective" />
+</div>

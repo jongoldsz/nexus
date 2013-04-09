@@ -1,0 +1,15 @@
+.objective_header
+{
+    background: rgb(200,200,200);
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-width: 0px;
+}
+
+.objective_body
+{
+    background: rgb(200,200,200);
+    border-style: solid;
+    border-width: 1px;
+    border-top-width: 0px;
+}

@@ -1,0 +1,18 @@
+  <div class="field current_tags">
+    Current tags: <br/>
+    <% @project.projecttags.each do |projecttag| %>
+    <div id="project_row_id_<%= projecttag.id %>">
+    <%= projecttag.tag.name %> <a href="#" class="remove_tag" id="<%= projecttag.id %>">Remove Tag</a><br/>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <input type="hidden" class="project_id" value="<%= @project.id %>" />
+    <select class="projecttags">
+      <% @tags.each do |tag| %>
+      <option value="<%= tag.id %>"><%= tag.name %></option>
+      <% end %>
+    </select>
+  <input class="add_tag" type="button" value="Add Tag" />
+  </div>

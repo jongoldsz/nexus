@@ -3,7 +3,21 @@ jQuery(document).ready(function(){
 	//load_nearby_projects();
         enable_tagging();
         enable_remove_tagging();
+        create_objective();
 });
+
+function create_objective()
+{
+    jQuery('.create_objective').click(function(){
+        var objective_name = jQuery('.objective_name').val();
+        var objective_description = jQuery('.objective_description').val();
+        var project_id = jQuery(".project_id").val();
+        $.post('/objectives.json',{"objective" :{ "name" : objective_name, "description": objective_description, "project_id" : project_id} },function(data){
+	    jQuery(".project_objectives").append('<tr class="objective_header" id="objective_'+data.objective.id+'"><td>'+data.objective.name+'</td><td>'+data.objective.description+'</td></tr>');
+	    jQuery(".project_objectives").append('<tr class="objective_body" id="objective_'+data.objective.id+'_tasks"><td colspan=2><table id="objective_'+data.objective.id+'_tasks_table"></table></td></tr>');
+        });
+    });
+}
 
 function enable_tagging()
 {

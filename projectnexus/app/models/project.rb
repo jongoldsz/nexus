@@ -12,6 +12,7 @@ class Project < ActiveRecord::Base
   has_many :tags, :through => :projecttags
   has_many :resources, :through => :projectresources
   has_one :stage, :class_name => Stage
+  has_many :objectives, :foreign_key => "project_id"
 
   attr_accessible :description, :name, :pitch, :status, :user_id, :miniimage
 end

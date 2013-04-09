@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <%= fields_for :task, @objectives do |o| %>
+    <%= o.label :objective_id %><br />
+    <%= collection_select(:task, :objective_id, Objective.all, :id, :name) %>
+  <% end %>
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>

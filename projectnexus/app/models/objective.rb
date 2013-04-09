@@ -5,5 +5,5 @@ class Objective < ActiveRecord::Base
   belongs_to :project, :class_name => Project
   has_many :tasks, :foreign_key => "objective_id"
   has_many :documents, :foreign_key => "objective_id"
-  attr_accessible :description, :name
+  attr_accessible :description, :name, :project_id
 end
