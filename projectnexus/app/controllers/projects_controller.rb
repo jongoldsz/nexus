@@ -34,6 +34,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @tags = Tag.all
     @project = Project.find(params[:id])
   end
 

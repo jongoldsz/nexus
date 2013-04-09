@@ -1,7 +1,33 @@
 jQuery(document).ready(function(){
 	load_local_projects();
 	//load_nearby_projects();
+        enable_tagging();
+        enable_remove_tagging();
 });
+
+function enable_tagging()
+{
+    jQuery('.add_tag').click(function(){
+	var tag_id = jQuery('select.projecttags').val();
+	var project_id = jQuery('input.project_id').val();
+	var tag_name = jQuery(".projecttags option[value='"+tag_id+"']").text();
+	$.post('/projecttags.json',{"projecttag" :{ "tag_id" : tag_id, "project_id" : project_id} },function(data){
+	    jQuery('.current_tags').append('<div id="project_row_id_'+data.projecttag.id+'">'+tag_name+'<a href="#" class="remove_tag" id="'+data.projectag.id+'">Remove Tag</a><br/></div>');
+	    enable_remove_tagging();
+        });
+    });
+}
+
+function enable_remove_tagging()
+{
+    jQuery('.remove_tag').unbind('click').click(function(){
+        var id = jQuery(this).attr("id");
+        $.post('/projecttags/'+id+'.json',{"_method": "delete"},function(data){
+            jQuery('#project_row_id_'+id).remove();
+        });
+    });
+
+}
 
 function load_local_projects()
 {

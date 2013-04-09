@@ -11,8 +11,8 @@
 
 <% @projecttags.each do |projecttag| %>
   <tr>
-    <td><%= projecttag.project_id %></td>
-    <td><%= projecttag.tag_id %></td>
+    <td><%= projecttag.project.name %></td>
+    <td><%= projecttag.tag.name %></td>
     <td><%= link_to 'Show', projecttag %></td>
     <td><%= link_to 'Edit', edit_projecttag_path(projecttag) %></td>
     <td><%= link_to 'Destroy', projecttag, method: :delete, data: { confirm: 'Are you sure?' } %></td>

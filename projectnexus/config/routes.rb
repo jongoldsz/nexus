@@ -1,4 +1,6 @@
 Projectnexus::Application.routes.draw do
+  resources :authentications
+
   resources :projectresources
 
   resources :projecttags
@@ -26,6 +28,10 @@ Projectnexus::Application.routes.draw do
   resources :objectives
 
   resources :projects
+
+#  match '/auth/:provider/callback' => 'authentications#create'
+#  devise_for :users
+#  resources :authentications
 
   resources :users
   
