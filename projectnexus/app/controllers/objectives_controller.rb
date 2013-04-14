@@ -2,7 +2,7 @@ class ObjectivesController < ApplicationController
   # GET /objectives
   # GET /objectives.json
   def index
-    @objectives = Objective.all
+    @objectives = Project.find(params[:project_id]).objectives #Objective.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -34,6 +34,7 @@ class ObjectivesController < ApplicationController
 
   # GET /objectives/1/edit
   def edit
+    @project = Project.find(params[:project_id])
     @objective = Objective.find(params[:id])
   end
 

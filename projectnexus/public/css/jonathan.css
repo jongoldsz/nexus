@@ -1,3 +1,136 @@
+#left_area
+{
+    padding: 2%;
+    width: 71%;
+    height: 600px;
+    float: left;
+    background-color: white;
+}
+
+#right_area
+{
+    padding: 2%;
+    width: 21%;
+    height: 600px;
+    background-color: red;
+    float: right;
+}
+
+#project_info_left
+{
+    float: left;
+    padding: 1%;
+    width: 68%;
+}
+
+#project_info_right
+{
+    float: left;
+    padding: 1%;
+    width: 28%;
+}
+
+#project_name
+{
+    border-style: solid;
+    border-width: 1px;
+    padding: 1.5%;
+    font-size: 200%;
+}
+
+#project_progress
+{
+    margin-top: 1%;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#project_progress_bar
+{
+    border-color: blue;
+    border-style: solid;
+    border-width: 3px;
+}
+
+#project_pitch
+{
+    margin-top: 1%;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1.5%;
+}
+
+#project_image
+{
+    border-style: solid;
+    border-width: 1px;
+    padding: 1.5%;
+}
+
+#project_join_support_contact
+{
+    width: 98%;
+    float: left;
+    padding: 1%;;
+}
+
+input.project_button
+{
+    width: 20%;
+}
+
+input.project_button.join
+{
+    width: 40%;
+}
+
+#project_nav_panel
+{
+    width: 98%;
+    float: left;
+    padding: 1%;
+}
+
+.project_nav_button
+{
+    width: 10.4%;
+    padding: 2%;
+}
+
+#project_content
+{
+    width: 98%;
+    height: 340px;
+    float: left;
+    padding: 1%;
+    margin-top: 10px;
+    background-color: blue;
+}
+
+#project_blog_post_status
+{
+    height: 100px;
+    background-color: orange;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1.5%;
+}
+
+#project_description
+{
+    margin-top: 8px;
+    height: 190px;
+    background-color: green;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1.5%;
+}
+
+.objectives_container
+{
+    width: 200px;
+}
+
 .objective_header
 {
     background: rgb(200,200,200);

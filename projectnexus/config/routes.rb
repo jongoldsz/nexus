@@ -25,9 +25,13 @@ Projectnexus::Application.routes.draw do
 
   resources :tasks
 
-  resources :objectives
+#  resources :objectives
 
-  resources :projects
+  resources :projects do 
+    resources :objectives
+  end
+
+
 
 #  match '/auth/:provider/callback' => 'authentications#create'
 #  devise_for :users
@@ -38,7 +42,7 @@ Projectnexus::Application.routes.draw do
   root :to => 'index#index'
   
   match "/browse" => redirect("/projects")
-  
+
   #map.resources :projects, :controller => "browse"
 
   # The priority is based upon order of creation:

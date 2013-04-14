@@ -4,7 +4,17 @@ jQuery(document).ready(function(){
         enable_tagging();
         enable_remove_tagging();
         create_objective();
+    enable_project_buttons();
+
 });
+
+function enable_project_buttons()
+{
+    jQuery('.project_nav_button').click(function() {
+	var pageToLoad = jQuery(this).val();
+	console.log();
+    });
+}
 
 function create_objective()
 {

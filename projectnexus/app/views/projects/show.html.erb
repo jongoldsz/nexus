@@ -1,41 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @project.name %>
-</p>
+<% render 'objectives' %>
 
-<p>
-  <b>Status:</b>
-  <%= @project.status %>
-</p>
+<div id="left_area">
+  
+  <div id="project_info_left">
+    <div id="project_name"><%= @project.name %></div>
+    <div id="project_progress"><div id="project_progress_bar" style="width: <%= @project.status %>%"></div></div>
+    <div id="project_pitch"><%= @project.pitch %></div>
+  </div>
+  <div id="project_info_right">
+    <div id="project_image">Image and Icon</div>
+  </div>
 
-<p>
-  <b>Pitch:</b>
-  <%= @project.pitch %>
-</p>
+  <div id="project_join_support_contact">
+    <input class="project_button join" type="button" value="Join" />
+    <input class="project_button" type="button" value="Suport" />
+    <input class="project_button" type="button" value="Contact" />
+  </div>
 
-<p>
-  <b>Description:</b>
-  <%= @project.description %>
-</p>
+  <div id="project_nav_panel">
+    <input class="project_nav_button" type="button" value="Home" />
+    <input class="project_nav_button" type="button" value="Discussions" />
+    <input class="project_nav_button" type="button" value="Images" />
+    <input class="project_nav_button" type="button" value="Blog" />
+    <input class="project_nav_button" type="button" value="People" />
+    <input class="project_nav_button" type="button" value="Objectives" />
+    <input class="project_nav_button" type="button" value="Calendar" />
+    <input class="project_nav_button" type="button" value="Recent" />
+    <input class="project_nav_button" type="button" value="Notifications" />
+  </div>
 
-<p>
-  <b>Owner:</b>
-  <%= @project.user.full_name %>
-</p>
+  <div id="project_content">
+    <div id="project_blog_post_status">Current Status</div>
+    <div id="project_description"><%= @project.description %></div>
+  </div>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-
-<br/><br/>
-
-<%= render 'objectives' %>
-
-<br/><br/>
-<div class="objectives">
-Objective Name: <input type="text" class="objective_name" /> <br/>
-Objective Description: <input type="text" class="objective_description" /> <br/>
-<input type="hidden" class="project_id" value="<%= @project.id %>" />
-<input type="button" class="create_objective" value="Create Objective" />
 </div>
+
+<div id="right_area">
+
+</div>
+
+
+
+<% link_to 'Edit', edit_project_path(@project) %>
+<% link_to 'Back', projects_path %>
