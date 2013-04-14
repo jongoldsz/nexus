@@ -28,10 +28,7 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= fields_for :project, @user do |u| %>
-    <%= u.label :user_id %><br />
-    <%= collection_select(:project, :user_id, User.all, :id, :full_name) %>
-    <% end %>
+    <%= f.hidden_field :user_id, :value => current_user.id %><br />
   </div>
   <div class="field">
     <%= f.label :miniimage %><br />

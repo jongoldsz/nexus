@@ -43,6 +43,12 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  # GET /projects/1/home
+  def home
+    @project = Project.find(params[:id])
+    render :layout => false
+  end
+
   # POST /projects
   # POST /projects.json
   def create

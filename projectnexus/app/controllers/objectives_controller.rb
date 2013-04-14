@@ -1,4 +1,5 @@
 class ObjectivesController < ApplicationController
+layout false
   # GET /objectives
   # GET /objectives.json
   def index
@@ -24,6 +25,7 @@ class ObjectivesController < ApplicationController
   # GET /objectives/new
   # GET /objectives/new.json
   def new
+    @project = Project.find(params[:project_id])
     @objective = Objective.new
 
     respond_to do |format|

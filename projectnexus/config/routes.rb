@@ -33,7 +33,7 @@ Projectnexus::Application.routes.draw do
 
 
 
-#  match '/auth/:provider/callback' => 'authentications#create'
+  match '/auth/facebook/callback' => 'authentications#create'
 #  devise_for :users
 #  resources :authentications
 
@@ -42,6 +42,8 @@ Projectnexus::Application.routes.draw do
   root :to => 'index#index'
   
   match "/browse" => redirect("/projects")
+  match "/projects/:id/home" => "projects#home"
+  match "/signout" => "authentications#destroy", :as => :signout
 
   #map.resources :projects, :controller => "browse"
 

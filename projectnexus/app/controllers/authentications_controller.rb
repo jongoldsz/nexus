@@ -7,20 +7,16 @@ class AuthenticationsController < ApplicationController
   # POST /authentications
   # POST /authentications.json
   def create
-    auth = request.env["omniauth.auth"] current_user.authentications.create(:provider => auth['provider'], :uid => auth['uid'])
-    flash[:notice] = "Authentication successful."
-    redirect_to authentications_url
+    auth = request.env["omniauth.auth"]
+    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+    session[:user_id] = user.id
+    redirect_to root_url
   end
 
   # DELETE /authentications/1
   # DELETE /authentications/1.json
   def destroy
-    @authentication = Authentication.find(params[:id])
-    @authentication.destroy
-
-    respond_to do |format|
-      format.html { redirect_to authentications_url }
-      format.json { head :no_content }
-    end
+    session[:user_id] = nil
+    redirect_to root_url
   end
 end

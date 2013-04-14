@@ -11,9 +11,14 @@ jQuery(document).ready(function(){
 function enable_project_buttons()
 {
     jQuery('.project_nav_button').click(function() {
+	var path = window.location.pathname;
+	path = path.split("/");
+	var project_id = path[2];
+
 	var pageToLoad = jQuery(this).val();
-	console.log();
-    });
+	pageToLoad = pageToLoad.toLowerCase();
+	jQuery("#project_content").attr("src",project_id+"/"+pageToLoad);
+   });
 }
 
 function create_objective()

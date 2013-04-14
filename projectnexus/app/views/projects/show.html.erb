@@ -17,6 +17,7 @@
     <input class="project_button join" type="button" value="Join" />
     <input class="project_button" type="button" value="Suport" />
     <input class="project_button" type="button" value="Contact" />
+    <%= User.find(@project.user_id).full_name %>
   </div>
 
   <div id="project_nav_panel">
@@ -31,10 +32,7 @@
     <input class="project_nav_button" type="button" value="Notifications" />
   </div>
 
-  <div id="project_content">
-    <div id="project_blog_post_status">Current Status</div>
-    <div id="project_description"><%= @project.description %></div>
-  </div>
+  <iframe id="project_content" src="<%= @project.id %>/home"></iframe>
 
 </div>
 
