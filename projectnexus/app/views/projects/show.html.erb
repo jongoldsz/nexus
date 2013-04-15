@@ -15,7 +15,11 @@
 
   <div id="project_join_support_contact">
     <% if current_user != nil && current_user.id != @project.user_id %>
-      <input class="project_button join" type="button" value="Join" />
+      <% if @membership == nil %>
+        <input class="project_button join" type="button" value="Join" />
+      <% else %>
+        <input class="project_button leave" type="button" value="Leave" membership_id="<%= @membership.id %>" />
+      <% end %>
       <input class="project_button" type="button" value="Suport" />
       <input class="project_button" type="button" value="Contact" />
     <% else %>

@@ -4,16 +4,44 @@ jQuery(document).ready(function(){
         enable_tagging();
         enable_remove_tagging();
         create_objective();
+    enable_nav_project_buttons();
     enable_project_buttons();
-
 });
 
 function enable_project_buttons()
 {
+    jQuery(".project_button").unbind("click").click(function(){
+	var buttonAction = jQuery(this).val().toLowerCase();
+	var project_id = get_project_id();
+	if(buttonAction == "join")
+	{
+	    jQuery.post('/memberships.json',{"membership" :{ "name" : "default", "project_id" : project_id} },function(data){
+		jQuery(".join").before('<input class="project_button leave" type="button" value="Leave" membership_id="'+data.membership.id+'" />').remove();
+		enable_project_buttons();
+	    });
+	}
+	else if(buttonAction == "leave")
+	{
+	    var membership_id = jQuery(this).attr("membership_id");
+	    jQuery.post('/memberships/'+membership_id+'.json',{"_method": "delete"},function(data){
+		jQuery(".leave").before('<input class="project_button join" type="button" value="Join" />').remove();
+		enable_project_buttons();
+            });
+	}
+    });
+}
+
+function get_project_id()
+{
+    var path = window.location.pathname;
+    path = path.split("/");
+    return path[2];
+}
+
+function enable_nav_project_buttons()
+{
     jQuery('.project_nav_button').click(function() {
-	var path = window.location.pathname;
-	path = path.split("/");
-	var project_id = path[2];
+	var project_id = get_project_id();
 
 	var pageToLoad = jQuery(this).val();
 	pageToLoad = pageToLoad.toLowerCase();
@@ -27,7 +55,7 @@ function create_objective()
         var objective_name = jQuery('.objective_name').val();
         var objective_description = jQuery('.objective_description').val();
         var project_id = jQuery(".project_id").val();
-        $.post('/objectives.json',{"objective" :{ "name" : objective_name, "description": objective_description, "project_id" : project_id} },function(data){
+        jQuery.post('/objectives.json',{"objective" :{ "name" : objective_name, "description": objective_description, "project_id" : project_id} },function(data){
 	    jQuery(".project_objectives").append('<tr class="objective_header" id="objective_'+data.objective.id+'"><td>'+data.objective.name+'</td><td>'+data.objective.description+'</td></tr>');
 	    jQuery(".project_objectives").append('<tr class="objective_body" id="objective_'+data.objective.id+'_tasks"><td colspan=2><table id="objective_'+data.objective.id+'_tasks_table"></table></td></tr>');
         });
@@ -40,7 +68,7 @@ function enable_tagging()
 	var tag_id = jQuery('select.projecttags').val();
 	var project_id = jQuery('input.project_id').val();
 	var tag_name = jQuery(".projecttags option[value='"+tag_id+"']").text();
-	$.post('/projecttags.json',{"projecttag" :{ "tag_id" : tag_id, "project_id" : project_id} },function(data){
+	jQuery.post('/projecttags.json',{"projecttag" :{ "tag_id" : tag_id, "project_id" : project_id} },function(data){
 	    jQuery('.current_tags').append('<div id="project_row_id_'+data.projecttag.id+'">'+tag_name+'<a href="#" class="remove_tag" id="'+data.projectag.id+'">Remove Tag</a><br/></div>');
 	    enable_remove_tagging();
         });
@@ -51,7 +79,7 @@ function enable_remove_tagging()
 {
     jQuery('.remove_tag').unbind('click').click(function(){
         var id = jQuery(this).attr("id");
-        $.post('/projecttags/'+id+'.json',{"_method": "delete"},function(data){
+        jQuery.post('/projecttags/'+id+'.json',{"_method": "delete"},function(data){
             jQuery('#project_row_id_'+id).remove();
         });
     });

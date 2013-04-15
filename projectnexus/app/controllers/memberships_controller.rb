@@ -40,6 +40,8 @@ class MembershipsController < ApplicationController
   # POST /memberships
   # POST /memberships.json
   def create
+    params[:membership][:user_id] = current_user.id
+    params[:membership][:level_id] = 1
     @membership = Membership.new(params[:membership])
 
     respond_to do |format|

@@ -84,6 +84,11 @@ input.project_button.join
     width: 40%;
 }
 
+input.project_button.leave
+{
+    width: 40%;
+}
+
 input.project_button.edit 
 {
     width: 40%;

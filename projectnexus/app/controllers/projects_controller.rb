@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
-
+    @membership = Membership.find_by_project_id_and_user_id(@project.id, current_user.id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project }
