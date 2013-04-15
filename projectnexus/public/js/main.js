@@ -28,6 +28,22 @@ function enable_project_buttons()
 		enable_project_buttons();
             });
 	}
+	else if(buttonAction == "support")
+        {
+            jQuery.post('/supporters.json',{"supporter" :{ "project_id" : project_id} },function(data){
+                jQuery(".support").before('<input class="project_button unsupport" type="button" value="Unsupport" supporter_id="'+data.supporter.id+'" />').remove();
+                enable_project_buttons();
+            });
+        }
+	else if(buttonAction == "unsupport")
+        {
+            var supporter_id = jQuery(this).attr("supporter_id");
+            jQuery.post('/supporters/'+supporter_id+'.json',{"_method": "delete"},function(data){
+                jQuery(".unsupport").before('<input class="project_button support" type="button" value="Support" />').remove();
+                enable_project_buttons();
+            });
+        }
+
     });
 }
 

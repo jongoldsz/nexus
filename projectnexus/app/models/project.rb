@@ -13,6 +13,8 @@ class Project < ActiveRecord::Base
   has_many :resources, :through => :projectresources
   has_one :stage, :class_name => Stage
   has_many :objectives, :foreign_key => "project_id"
+  has_many :supporters,:foreign_key => "project_id"
+  has_many :memberships,:foreign_key => "user_id"
 
   attr_accessible :description, :name, :pitch, :status, :user_id, :miniimage
 end

@@ -20,7 +20,11 @@
       <% else %>
         <input class="project_button leave" type="button" value="Leave" membership_id="<%= @membership.id %>" />
       <% end %>
-      <input class="project_button" type="button" value="Suport" />
+      <% if @supporter == nil %>
+        <input class="project_button support" type="button" value="Support" />
+      <% else %>
+        <input class="project_button unsupport" type="button" value="Unsupport" supporter_id="<%= @supporter.id %>" />
+      <% end %>
       <input class="project_button" type="button" value="Contact" />
     <% else %>
       <input class="project_button edit" type="button" value="Edit" />

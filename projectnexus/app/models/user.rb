@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :authentications, :foreign_key => "user_id"
   has_many :projects, :foreign_key => "user_id"
   has_many :memberships, :foreign_key => "user_id"
+  has_many :supporters, :foreign_key => "user_id"
   has_many :files, :foreign_key => "user_id"
   has_many :tasks, :foreign_key => "user_id"
   has_many :blogentries, :foreign_key => "user_id"

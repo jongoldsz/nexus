@@ -1,4 +1,6 @@
 Projectnexus::Application.routes.draw do
+  resources :supporters
+
   resources :authentications
 
   resources :projectresources
