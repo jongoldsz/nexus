@@ -84,6 +84,12 @@ input.project_button.join
     width: 40%;
 }
 
+input.project_button.edit 
+{
+    width: 40%;
+}
+
+
 #project_nav_panel
 {
     width: 98%;
