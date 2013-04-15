@@ -50,7 +50,6 @@ Projectnexus::Application.routes.draw do
   match "/projects/:id/blog" => "blogentries#index"
   match "/projects/:id/blog/new" => "blogentries#new"
   match "/projects/:id/blog/:entry_id" => "blogentries#show"
-  match "/projects/:id/blog/:entry_id/edit" => "blogentries#edit"
 
   #map.resources :projects, :controller => "browse"
 

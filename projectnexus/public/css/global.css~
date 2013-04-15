@@ -208,8 +208,7 @@ body {
   height: 70px;
   border-top-width: 4px;
   border-top-style: solid;
-  border-color: #9dcb4b;
-  clear: both; }
+  border-color: #9dcb4b; }
 
 h1.section_title {
   padding-top: 20px;

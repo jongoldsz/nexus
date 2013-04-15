@@ -1,10 +1,19 @@
-#content_area
+#left_area
 {
     padding: 2%;
-    width: 96%;
+    width: 71%;
     height: 600px;
     float: left;
     background-color: white;
+}
+
+#right_area
+{
+    padding: 2%;
+    width: 21%;
+    height: 600px;
+    background-color: red;
+    float: right;
 }
 
 #project_info_left
@@ -45,46 +54,17 @@
 
 #project_pitch
 {
+    margin-top: 1%;
     border-style: solid;
     border-width: 1px;
     padding: 1.5%;
-    display: block;
 }
 
-#project_details_area
+#project_image
 {
-	padding: 1%;
-}
-
-#project_details_left
-{
-	float: left;
-	width: 29%;
-	margin-right: 1%;
-}
-
-#project_details_right
-{
-	float: right;
-	width: 69%;
-	margin-left: 1%;
-}
-
-#image_and_icon
-{
-	border-style: solid;
-        border-width: 1px;
-	padding: 3%;
-	height: 80px;
-}
-
-#project_status
-{
-	border-style: solid;
-	border-width: 1px;
-	margin: 1%;
-	padding: 2%;
-	clear: both;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1.5%;
 }
 
 #project_join_support_contact

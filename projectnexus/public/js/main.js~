@@ -43,10 +43,6 @@ function enable_project_buttons()
                 enable_project_buttons();
             });
         }
-	else if(buttonAction == "edit")
-	{
-	    window.location.pathname += "/edit";
-	}
 
     });
 }
@@ -60,12 +56,6 @@ function get_project_id()
 
 function enable_nav_project_buttons()
 {
-    jQuery('#image_and_icon').click(function() {
-	    var project_id = get_project_id();
-	    var pageToLoad = "home";
-	    jQuery("#project_content").attr("src",project_id+"/"+pageToLoad);
-	});
-
     jQuery('.project_nav_button').click(function() {
 	var project_id = get_project_id();
 

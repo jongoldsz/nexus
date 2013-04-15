@@ -2,5 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @blogentry %> |
-<%= link_to 'Back', blogentries_path %>
+<%= link_to 'Back', "/projects/#{@blogentry.project_id}/blog/#{@blogentry.id}" %>

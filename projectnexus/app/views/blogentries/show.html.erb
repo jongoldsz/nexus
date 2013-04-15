@@ -16,5 +16,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_blogentry_path(@blogentry) %> |
-<%= link_to 'Back', blogentries_path %>
+<%= link_to 'Edit', "/projects/#{@blogentry.project_id}/blog/#{@blogentry.id}/edit" %> |
+<%= link_to 'Back', "/projects/#{@blogentry.project_id}/blog" %>

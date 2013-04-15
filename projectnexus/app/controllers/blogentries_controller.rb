@@ -36,7 +36,7 @@ layout false
 
   # GET /blogentries/1/edit
   def edit
-    @blogentry = Blogentry.find(params[:id])
+    @blogentry = Blogentry.find(params[:entry_id])
   end
 
   # POST /blogentries
@@ -62,7 +62,7 @@ layout false
 
     respond_to do |format|
       if @blogentry.update_attributes(params[:blogentry])
-        format.html { redirect_to @blogentry, notice: 'Blogentry was successfully updated.' }
+        format.html { redirect_to "/projects/#{@blogentry.project_id}/blog/#{@blogentry.id}", notice: 'Blogentry was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
