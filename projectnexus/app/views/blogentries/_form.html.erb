@@ -20,6 +20,9 @@
     <%= f.text_area :content %>
   </div>
   <div class="field">
+    <%= f.hidden_field :project_id, :value => params[:id] %>
+  </div>
+  <div class="field">
     <%= f.label :highlighted %><br />
     <%= f.check_box :highlighted %>
   </div>

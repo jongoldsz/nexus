@@ -8,5 +8,5 @@ class Blogentry < ActiveRecord::Base
       has_many :files, :foreign_key => "blogentry_id"
       
 
-      attr_accessible :content, :highlighted, :title
+      attr_accessible :content, :highlighted, :title, :project_id, :user_id
 end

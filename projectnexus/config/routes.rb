@@ -46,6 +46,10 @@ Projectnexus::Application.routes.draw do
   match "/browse" => redirect("/projects")
   match "/projects/:id/home" => "projects#home"
   match "/signout" => "authentications#destroy", :as => :signout
+  match "/projects/:id/people" => "memberships#index"
+  match "/projects/:id/blog" => "blogentries#index"
+  match "/projects/:id/blog/new" => "blogentries#new"
+  match "/projects/:id/blog/:entry_id" => "blogentries#show"
 
   #map.resources :projects, :controller => "browse"
 

@@ -1,8 +1,10 @@
 class BlogentriesController < ApplicationController
+layout false
+
   # GET /blogentries
   # GET /blogentries.json
   def index
-    @blogentries = Blogentry.all
+    @blogentries = Project.find(params[:id]).blogentries
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +15,7 @@ class BlogentriesController < ApplicationController
   # GET /blogentries/1
   # GET /blogentries/1.json
   def show
-    @blogentry = Blogentry.find(params[:id])
+    @blogentry = Blogentry.find(params[:entry_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -44,7 +46,7 @@ class BlogentriesController < ApplicationController
 
     respond_to do |format|
       if @blogentry.save
-        format.html { redirect_to @blogentry, notice: 'Blogentry was successfully created.' }
+        format.html { redirect_to "/projects/#{@blogentry.project_id}/blog/#{@blogentry.id}", notice: 'Blogentry was successfully created.' }
         format.json { render json: @blogentry, status: :created, location: @blogentry }
       else
         format.html { render action: "new" }

@@ -1,8 +1,10 @@
 class MembershipsController < ApplicationController
+layout false
+
   # GET /memberships
   # GET /memberships.json
   def index
-    @memberships = Membership.all
+    @memberships = Project.find(params[:id]).memberships
 
     respond_to do |format|
       format.html # index.html.erb
