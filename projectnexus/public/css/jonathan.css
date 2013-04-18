@@ -130,8 +130,9 @@ input.project_button.edit
 
 #project_content
 {
+    overflow-y: auto;
     width: 98%;
-    height: 340px;
+    height: 320px;
     float: left;
     padding: 1%;
     margin-top: 10px;

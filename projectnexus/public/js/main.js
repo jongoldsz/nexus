@@ -115,13 +115,13 @@ function enable_remove_tagging()
 function load_local_projects()
 {
 	// set source to function that will only return 4 local projects
-	jQuery.getJSON('projects.json',function(data){
+	/*jQuery.getJSON('projects.json',function(data){
 		local = data;
 		for(var i = 0; i < 4; i++)
 		{
 			jQuery("#featured-projects").append(project_tile(local[i],i));
 		}
-	});
+	});*/
 }
 
 function load_nearby_projects()

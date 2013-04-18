@@ -87,7 +87,6 @@ input {
   vertical-align: middle; }
 
 body {
-  background: url("../graphics/splash-background.png");
   background-size: 140% auto;
   background-repeat: no-repeat;
   background-attachment: fixed; }
@@ -140,13 +139,19 @@ body {
       width: 100%; } }
   .content-wrap .header-nav-wrap .header-nav {
     float: left;
-    margin: 20px 0 0 5%; }
+    margin: 4px 0 0 5%; }
     .content-wrap .header-nav-wrap .header-nav a {
       font-size: 20px;
       -moz-transition: all 0.5s;
       -webkit-transition: cubic-bezier(0.1, 0.1, 0.25, 0.9), all 0.5s;
       -o-transition: all 0.5s;
       transition: all 0.5s; }
+    .content-wrap .header-nav-wrap .header-user {
+	float: right;
+	margin: 14px 0 0 5%;
+	font-size: 20px;
+	color: #FFF;
+	}
     .content-wrap .header-nav-wrap .header-nav span {
       color: #FFF;
       font-size: 15px; }

@@ -1,0 +1,7 @@
+<ul>
+  <% @project.objectives.each do |objective| %>
+  <li>
+    <%= objective.name %>
+  </li>
+  <% end %>
+</ul>

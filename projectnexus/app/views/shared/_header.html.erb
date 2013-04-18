@@ -2,19 +2,21 @@
 	<div id="header-wrap" class="clearfix">
 		<div id="logo-wrap">
 			<div id='header-logo'><a href="../"><img src="/imgs/nexus-logo.png"></a></div>
-			<p class='subhead-text'>troy, ny</p>
+			<!--<p class='subhead-text'>troy, ny</p>-->
 		</div>
 			<div class="header-nav-wrap">
 				<div class="header-nav">
-				<a href="../browse">browse<br><span>projects</span></a>
-				
-			</div>
-			<div class="header-nav">
-				<a href="../projects/new">create a<br><span>projects</span></a>
-			</div>
+                                  <a href="../projects/new">start a<br><span>projects</span></a>
+				</div>
+			        <div class="header-nav">
+				  <a href="../browse">browse<br><span>projects</span></a>
+				</div>
+				<div class="header-nav">
+                                  <a href="../browse">explore<br><span>more</span></a>
+				</div>
 			<div class="header-user">
 			  <% if current_user %>
-			  Welcome <%= current_user.full_name %>
+			    <%= current_user.first %>
 			  <%= link_to "Sign out", signout_path %>
 			  <% else %>
 			    <%= link_to "Sign in with Facebook", "/auth/facebook" %>

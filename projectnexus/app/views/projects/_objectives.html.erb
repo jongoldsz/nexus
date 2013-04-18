@@ -1,38 +1,5 @@
-<div class="objectives_container">
-
-	<table class="project_objectives">
-	  <tr>
-	    <th>Name</th>
-	    <th>Description</th>
-	  </tr>
-
-	<% @project.objectives.each do |objective| %>
-	  <tr class="objective_header" id="objective_<%= objective.id %>">
-	    <td><%= objective.name %></td>
-	    <td><%= objective.description %></td>
-	  </tr>
-	  <tr class="objective_body" id="objective_<%= objective.id %>_tasks">
-	    <td colspan=2>
-	      <table id="objective_<%= objective.id %>_tasks_table">
-		<% objective.tasks.each do |task| %>
-		<tr>
-		  <td><%= task.name %></td>
-		  <td><%= task.description %></td>
-		</tr>
-		<% end %>
-	      </table>
-	    </td>
-	  </tr>
-	<% end %>
-
-	</table>
-
-	<br/><br/>
-	<div class="objectives">
-		Objective Name: <input type="text" class="objective_name" /> <br/>
-		Objective Description: <input type="text" class="objective_description" /> <br/>
-		<input type="hidden" class="project_id" value="<%= @project.id %>" />
-		<input type="button" class="create_objective" value="Create Objective" />
-	</div>
-
+<div id="objectives">
+<%= render 'objectives_list' %>
 </div>
+
+<%= render 'objectives_form' %>

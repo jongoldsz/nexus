@@ -21,9 +21,11 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @membership = Membership.find_by_project_id_and_user_id(@project.id, current_user.id)
     @supporter = Supporter.find_by_project_id_and_user_id(@project.id, current_user.id)
+    @objective = Objective.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project }
+      format.js
     end
   end
 

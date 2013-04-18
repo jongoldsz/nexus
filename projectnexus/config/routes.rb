@@ -27,11 +27,9 @@ Projectnexus::Application.routes.draw do
 
   resources :tasks
 
-#  resources :objectives
+  resources :objectives
 
-  resources :projects do 
-    resources :objectives
-  end
+  resources :projects
 
 
 

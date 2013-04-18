@@ -47,8 +47,8 @@ layout false
 
     respond_to do |format|
       if @objective.save
-        format.html { redirect_to @objective, notice: 'Objective was successfully created.' }
-        format.json { render json: @objective, status: :created, location: @objective }
+        format.json { redirect_to @objective.project, notice: 'Objective was successfully created.' }
+        format.html { render json: @objective, status: :created, location: @objective }
       else
         format.html { render action: "new" }
         format.json { render json: @objective.errors, status: :unprocessable_entity }
