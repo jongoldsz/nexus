@@ -1,12 +1,16 @@
 jQuery(document).ready(function(){
     enable_project_buttons();
     enable_objective_buttons();
+    enable_nav_project_buttons();
 });
 
 function enable_objective_buttons()
 {
     jQuery('.add_task').click(function() {
-        jQuery('form.new_task').toggle();
+        jQuery('form#new_task').toggle();
+    });
+    jQuery('.add_objective').click(function() {
+        jQuery('form#new_objective').toggle();
     });
     jQuery('.expand_task').click(function(){
 	var task = jQuery(this).data("task");
@@ -67,17 +71,20 @@ function get_project_id()
 function enable_nav_project_buttons()
 {
     jQuery('#image_and_icon').click(function() {
-	    var project_id = get_project_id();
-	    var pageToLoad = "home";
-	    jQuery("#project_content").attr("src",project_id+"/"+pageToLoad);
+	var pageToLoad = "home";
+	var project_id = get_project_id();
+	jQuery.getScript('/projects/'+project_id+'.js?page='+pageToLoad, function(data, textStatus, jqxhr) {
+	    run();
 	});
+    });
 
     jQuery('.project_nav_button').click(function() {
-	var project_id = get_project_id();
-
 	var pageToLoad = jQuery(this).val();
 	pageToLoad = pageToLoad.toLowerCase();
-	jQuery("#project_content").attr("src",project_id+"/"+pageToLoad);
+	var project_id = get_project_id();
+	jQuery.getScript('/projects/'+project_id+'.js?page='+pageToLoad, function(data, textStatus, jqxhr) {
+	    run();
+	});
    });
 }
 

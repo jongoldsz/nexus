@@ -157,30 +157,20 @@ input.project_button.edit
     padding: 1.5%;
 }
 
-.objectives_container
-{
-    width: 200px;
-}
-
-.objective_header
-{
-    background: rgb(200,200,200);
-    border-style: solid;
-    border-width: 1px;
-    border-bottom-width: 0px;
-}
-
-.objective_body
-{
-    background: rgb(200,200,200);
-    border-style: solid;
-    border-width: 1px;
-    border-top-width: 0px;
-}
-
 li.task
 {
     padding-left: 4%;
+    border-style: solid;
+    border-width: 1px;
+    padding: 3%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+div.objective_header
+{
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 #assigned_tasks_list

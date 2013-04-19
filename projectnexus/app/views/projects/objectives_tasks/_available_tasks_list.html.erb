@@ -1,5 +1,5 @@
 <div id="available_tasks_list">
-  Other/unassigned tasks: <button class="add_task"> + </button>
+  Other/unassigned tasks: <button class="add_objective"> + Objective </button> <button class="add_task"> + Task </button>
 
 
     <%= form_for(Task.new, :remote=>true) do |f| %>
@@ -24,11 +24,29 @@
       </div>
     <% end %>
 
+    <%= form_for(Objective.new, :remote=>true) do |f| %>
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :description %><br />
+        <%= f.text_field :description %>
+      </div>
+      <div class="field">
+	<%= f.hidden_field :project_id, :value => @project.id %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
 
   <ul>
     <% @project.objectives.each do |objective| %>
     <li class="objective">
-      <%= objective.name %>
+      <div class="objective_header">
+	<%= objective.name %>
+      </div>
       <ul>
 	
 	<% objective.tasks.each do |task| %>
@@ -50,31 +68,6 @@
 	  </li>
 	  <% end %>
 	<% end %>
-	
-	<li>
-<!--
-	      <%= form_for(Task.new, :remote=>true) do |f| %>
-	      <div class="field">
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	      </div>
-	      <div class="field">
-		<%= f.label :description %><br />
-		<%= f.text_field :description %>
-	      </div>
-	      <div class="field">
-		<%= f.label :duedate %><br />
-		<%= f.datetime_select :duedate %>
-	      </div>
-	      <div class="field">
-		<%= f.hidden_field :objective_id, :value => objective.id %><br />
-	      </div>
-	      <div class="actions">
-		<%= f.submit %>
-	      </div>
-	      <% end %>
--->	</li>
-	
       </ul>
     </li>
     <% end %>

@@ -47,7 +47,8 @@ layout false
 
     respond_to do |format|
       if @objective.save
-        format.html { redirect_to @objective.project, :target => 'objectives_tasks', notice: 'Objective was successfully created.' }
+        flash[:target] = 'objectives'
+        format.html { redirect_to @objective.project, notice: 'Objective was successfully created.' }
         format.json { render json: @objective, status: :created, location: @objective }
       else
         format.html { render action: "new" }

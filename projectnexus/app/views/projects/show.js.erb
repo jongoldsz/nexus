@@ -1,4 +1,20 @@
-/* Load objectives and tasks */
-jQuery("#project_content").html("<%= escape_javascript(render 'projects/objectives_tasks/objectives_tasks') %>");
-enable_objective_buttons();
-/* Load objectives and tasks */
+/* set param to flash target if nil */
+<% if params[:page] == nil %>
+<% params[:page] = flash[:target] %>
+<% end %>
+
+function run()
+{
+
+	/* Load objectives and tasks */
+	<% if params[:page] == 'objectives' %>
+	jQuery("#project_content").html("<%= escape_javascript(render 'projects/objectives_tasks/objectives_tasks') %>");
+	enable_objective_buttons();
+	/* Load objectives and tasks */
+	<% elsif params[:page] == '' %>
+
+	<% else %>
+	jQuery("#project_content").html("<%= escape_javascript(render 'home') %>");
+	<% end %>
+
+}

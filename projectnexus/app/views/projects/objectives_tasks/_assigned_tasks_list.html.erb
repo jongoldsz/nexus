@@ -1,7 +1,9 @@
-<ul id="user_tasks_list">
-  <% current_user.tasks.each do |task| %>
-  <li>
-    <%= task.name %>
-  </li>
-  <% end %>
-</ul>
+<div id="assigned_tasks_list">
+  <ul>
+    <% current_user.tasks.each do |task| %>
+    <li>
+      <%= task.name %>
+    </li>
+    <% end %>
+  </ul>
+</div>
