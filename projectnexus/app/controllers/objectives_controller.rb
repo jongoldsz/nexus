@@ -3,7 +3,7 @@ layout false
   # GET /objectives
   # GET /objectives.json
   def index
-    @objectives = Project.find(params[:project_id]).objectives #Objective.all
+    @objectives = Objective.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,8 +47,8 @@ layout false
 
     respond_to do |format|
       if @objective.save
-        format.json { redirect_to @objective.project, notice: 'Objective was successfully created.' }
-        format.html { render json: @objective, status: :created, location: @objective }
+        format.html { redirect_to @objective.project, :target => 'objectives_tasks', notice: 'Objective was successfully created.' }
+        format.json { render json: @objective, status: :created, location: @objective }
       else
         format.html { render action: "new" }
         format.json { render json: @objective.errors, status: :unprocessable_entity }

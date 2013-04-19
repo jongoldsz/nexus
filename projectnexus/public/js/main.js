@@ -1,12 +1,18 @@
 jQuery(document).ready(function(){
-	load_local_projects();
-	//load_nearby_projects();
-        enable_tagging();
-        enable_remove_tagging();
-        create_objective();
-    enable_nav_project_buttons();
     enable_project_buttons();
+    enable_objective_buttons();
 });
+
+function enable_objective_buttons()
+{
+    jQuery('.add_task').click(function() {
+        jQuery('form.new_task').toggle();
+    });
+    jQuery('.expand_task').click(function(){
+	var task = jQuery(this).data("task");
+	jQuery(task).toggle();
+    });
+}
 
 function enable_project_buttons()
 {

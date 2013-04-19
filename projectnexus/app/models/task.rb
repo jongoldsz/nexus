@@ -8,5 +8,5 @@ class Task < ActiveRecord::Base
   belongs_to :objective, :class_name => Objective
   belongs_to :user, :class_name => User
 
-  attr_accessible :description, :duedate, :name, :status, :objective_id
+  attr_accessible :description, :duedate, :name, :status, :objective_id, :user_id
 end

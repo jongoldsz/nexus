@@ -1,0 +1,7 @@
+<ul id="user_tasks_list">
+  <% current_user.tasks.each do |task| %>
+  <li>
+    <%= task.name %>
+  </li>
+  <% end %>
+</ul>

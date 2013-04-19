@@ -2,7 +2,7 @@
 {
     padding: 2%;
     width: 96%;
-    height: 600px;
+    height: 60%;
     float: left;
     background-color: white;
 }
@@ -132,7 +132,7 @@ input.project_button.edit
 {
     overflow-y: auto;
     width: 98%;
-    height: 320px;
+    height: 40%;
     float: left;
     padding: 1%;
     margin-top: 10px;
@@ -176,4 +176,27 @@ input.project_button.edit
     border-style: solid;
     border-width: 1px;
     border-top-width: 0px;
+}
+
+li.task
+{
+    padding-left: 4%;
+}
+
+#assigned_tasks_list
+{
+    float: left;
+    width: 70%;
+}
+
+#available_tasks_list
+{
+    float: right;
+    width: 30%;
+}
+
+.task_info
+{
+    display: none;
+    padding-left: 4%;
 }

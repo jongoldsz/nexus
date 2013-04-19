@@ -1,1 +1,4 @@
-$("#objectives").html("<%= escape_javascript(render 'objectives_list') %>");
+/* Load objectives and tasks */
+jQuery("#project_content").html("<%= escape_javascript(render 'projects/objectives_tasks/objectives_tasks') %>");
+enable_objective_buttons();
+/* Load objectives and tasks */
