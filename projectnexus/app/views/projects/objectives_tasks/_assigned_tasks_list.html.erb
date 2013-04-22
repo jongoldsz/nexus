@@ -7,7 +7,7 @@
 	  <div class="task_details" id="assigned_task<%= task.id %>_details" style="display: block;">
 	  <%= task.objective.name %> :
 	  <%= task.name %>
-	  Due: <%= task.duedate %>	  
+	  Due: <%= task.duedate.to_date %>	  
 	  <%= task.description %>
 	  </div>
 
