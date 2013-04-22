@@ -1,7 +1,7 @@
 <div id="assigned_tasks_list">
   <ul>
     <% current_user.tasks.each do |task| %>
-      <% if task.objective.project_id == @project.id %>
+      <% if task.objective.project_id == @project.id && (task.status.nil? || task.status == false) %>
         <li class="assigned_task" id="assigned_task<%= task.id %>">
 
 	  <div class="task_details" id="assigned_task<%= task.id %>_details" style="display: block;">
