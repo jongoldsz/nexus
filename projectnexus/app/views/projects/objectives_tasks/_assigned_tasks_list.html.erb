@@ -3,7 +3,14 @@
     <% current_user.tasks.each do |task| %>
       <% if task.objective.project_id == @project.id %>
         <li>
+	  <%= task.objective.name %> :
 	  <%= task.name %>
+	  Due: <%= task.duedate %>
+	  <br/>
+	  <%= task.description %>
+	  <button>Mark as completed</button>
+	  <button>Unassign</button>
+	  <button>Request help</button>
 	</li>
       <% end %>
     <% end %>
