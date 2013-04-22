@@ -1,9 +1,11 @@
 <div id="assigned_tasks_list">
   <ul>
     <% current_user.tasks.each do |task| %>
-    <li>
-      <%= task.name %>
-    </li>
+      <% if task.objective.project_id == @project.id %>
+        <li>
+	  <%= task.name %>
+	</li>
+      <% end %>
     <% end %>
   </ul>
 </div>
