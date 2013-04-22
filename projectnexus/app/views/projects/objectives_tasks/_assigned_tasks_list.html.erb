@@ -18,11 +18,18 @@
 	  <%= f.submit "Mark as done" %>
 	  <% end %>
 	  <button>Comments</button>
-	  <%= form_for(task, :remote=>true) do|f| %>
-          <%= f.hidden_field :request_assistance, :value => true  %>
-          <%= f.submit "Request assistance" %>
-          <% end %>
-	  <%= form_for(task, :remote=>true) do|f| %>
+	  <% if task.request_assistance %>
+	    <%= form_for(task, :remote=>true) do |f| %>
+            <%= f.hidden_field :request_assistance, :value => false  %>
+            <%= f.submit "Unrequest assistance" %>
+            <% end %>
+	  <% else %>
+	    <%= form_for(task, :remote=>true) do |f| %>
+            <%= f.hidden_field :request_assistance, :value => true  %>
+            <%= f.submit "Request assistance" %>
+            <% end %>
+	  <% end %>
+	  <%= form_for(task, :remote=>true) do |f| %>
           <%= f.hidden_field :user_id, :value => nil  %>
           <%= f.submit "Unassign yourself" %>
           <% end %>
