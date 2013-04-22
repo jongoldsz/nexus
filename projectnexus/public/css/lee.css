@@ -1,0 +1,13 @@
+/* Controls the max width of content between the header and footer */
+#full-content-wrapper {
+	max-width: 1040px;
+	margin:auto;
+}
+
+#footer {
+	border-color: #FF5113 ! important;
+}
+
+body {
+	background-color: #e6e6e6 ! important;
+}
