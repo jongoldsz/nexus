@@ -7,5 +7,5 @@ class Comment < ActiveRecord::Base
   belongs_to :task, :class_name => Task
   has_many :files, :foreign_key => "comment_id"
 
-  attr_accessible :message
+  attr_accessible :message, :task_id, :user_id
 end

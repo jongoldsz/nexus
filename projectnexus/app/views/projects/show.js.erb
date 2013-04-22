@@ -11,9 +11,16 @@ function run()
 	jQuery("#project_content").html("<%= escape_javascript(render 'projects/objectives_tasks/objectives_tasks') %>");
 	enable_objective_buttons();
 	enable_assigned_tasks_hover();
+	enable_assigned_tasks_comments_button();
 	/* Load objectives and tasks */
 
+	<% elsif params[:page] == 'tasks_comment' %>
+	<% params[:task_id] = flash[:task_id] %>
+	<% @task = Task.find(params[:task_id]) %>
+	jQuery("#assigned_task<%= @task.id %>_comments").html("<%= escape_javascript(render 'projects/objectives_tasks/comments/task_comments', :task => @task) %>");
+
 	<% elsif params[:page] == '' %>
+
 
 	<% else %>
 	jQuery("#project_content").html("<%= escape_javascript(render 'home') %>");

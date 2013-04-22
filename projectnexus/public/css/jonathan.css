@@ -191,12 +191,12 @@ div.objective_header
     padding-left: 4%;
 }
 
-.task_details
-{
-    height: 22px;
-}
-
 .edit_task
 {
     display: inline;
+}
+
+.task_comments
+{
+    display: none;
 }

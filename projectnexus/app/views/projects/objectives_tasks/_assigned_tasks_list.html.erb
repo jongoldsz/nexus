@@ -17,7 +17,7 @@
 	  <%= f.hidden_field :request_assistance, :value => false %>
 	  <%= f.submit "Mark as done" %>
 	  <% end %>
-	  <button>Comments</button>
+	  <button class="assigned_task_comments_button" id="assigned_task_<%= task.id %>_comments">Comments</button>
 	  <% if task.request_assistance %>
 	    <%= form_for(task, :remote=>true) do |f| %>
             <%= f.hidden_field :request_assistance, :value => false  %>
@@ -33,6 +33,10 @@
           <%= f.hidden_field :user_id, :value => nil  %>
           <%= f.submit "Unassign yourself" %>
           <% end %>
+	  </div>
+
+	  <div class="task_comments" id="assigned_task<%= task.id %>_comments">
+	    <%= render 'projects/objectives_tasks/comments/task_comments', :task => task %>
 	  </div>
 
 	</li>

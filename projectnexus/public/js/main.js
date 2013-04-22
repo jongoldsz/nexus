@@ -3,7 +3,16 @@ jQuery(document).ready(function(){
     enable_objective_buttons();
     enable_nav_project_buttons();
     enable_assigned_tasks_hover();
+    enable_assigned_tasks_comments_button();
 });
+
+function enable_assigned_tasks_comments_button()
+{
+    jQuery(".assigned_task_comments_button").click(function(){
+	var id = jQuery(this).attr("id").split("_");
+	jQuery("#assigned_task"+id[2]+"_comments").toggle();
+    });
+}
 
 function enable_assigned_tasks_hover()
 {

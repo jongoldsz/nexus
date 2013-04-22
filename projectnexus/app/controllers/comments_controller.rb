@@ -43,8 +43,13 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
 
     respond_to do |format|
+      if @comment.task_id
+        flash[:target] = 'tasks_comment'
+        flash[:task_id] = @comment.task_id
+      end
+
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment.task.objective.project, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { render action: "new" }

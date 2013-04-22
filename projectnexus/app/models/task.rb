@@ -4,6 +4,7 @@ class Task < ActiveRecord::Base
   validates_presence_of :name
 
   has_many :tasks, :foreign_key => "task_id"
+  has_many :comments, :foreign_key => "task_id"
   belongs_to :task, :class_name => Task
   belongs_to :objective, :class_name => Objective
   belongs_to :user, :class_name => User
