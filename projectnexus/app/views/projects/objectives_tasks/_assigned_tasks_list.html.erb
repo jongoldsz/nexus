@@ -14,6 +14,7 @@
 	  <div class="task_buttons" id="assigned_task<%= task.id %>_buttons" style="display: none;">
 	  <%= form_for(task, :remote=>true) do |f| %>
 	  <%= f.hidden_field :status, :value => true  %>
+	  <%= f.hidden_field :request_assistance, :value => false %>
 	  <%= f.submit "Mark as done" %>
 	  <% end %>
 	  <button>Comments</button>
