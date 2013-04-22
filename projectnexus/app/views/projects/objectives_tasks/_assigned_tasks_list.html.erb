@@ -2,19 +2,29 @@
   <ul>
     <% current_user.tasks.each do |task| %>
       <% if task.objective.project_id == @project.id %>
-        <li class="assigned_task" id="task<%= task.id %>">
+        <li class="assigned_task" id="assigned_task<%= task.id %>">
 
-	  <div class="task_details" id="task<%= task.id %>_details" style="display: block;">
+	  <div class="task_details" id="assigned_task<%= task.id %>_details" style="display: block;">
 	  <%= task.objective.name %> :
 	  <%= task.name %>
 	  Due: <%= task.duedate %>	  
 	  <%= task.description %>
 	  </div>
 
-	  <div class="task_buttons" id="task<%= task.id %>_buttons" style="display: none;">
-	  <button>Mark as completed</button>
-	  <button>Unassign</button>
-	  <button>Request help</button>
+	  <div class="task_buttons" id="assigned_task<%= task.id %>_buttons" style="display: none;">
+	  <%= form_for(task, :remote=>true) do |f| %>
+	  <%= f.hidden_field :status, :value => true  %>
+	  <%= f.submit "Mark as done" %>
+	  <% end %>
+	  <button>Comments</button>
+	  <%= form_for(task, :remote=>true) do|f| %>
+          <%= f.hidden_field :request_assistance, :value => true  %>
+          <%= f.submit "Request assistance" %>
+          <% end %>
+	  <%= form_for(task, :remote=>true) do|f| %>
+          <%= f.hidden_field :user_id, :value => nil  %>
+          <%= f.submit "Unassign yourself" %>
+          <% end %>
 	  </div>
 
 	</li>

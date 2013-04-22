@@ -50,9 +50,7 @@
       <ul>
 	
 	<% objective.tasks.each do |task| %>
-	<% if task.user_id %>
-
-	<% else %>
+	<% if task.user_id.nil? || task.request_assistance%>
           <li class="task">
 	    <a href="#" class="expand_task" data-task="#task<%=task.id  %>"><%= task.name %></a>
 	    
@@ -61,6 +59,7 @@
 	      Description: <%= task.description %><br/>
 	      <%= form_for(task, :method => :put, :remote=>true) do |f| %>
 	      <%= f.hidden_field :user_id, :value => current_user.id %>
+	      <%= f.hidden_field :request_assistance, :value => false %>
 	      <%= f.submit "Claim" %>
 	      <% end %>
 	    </div>
