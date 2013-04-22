@@ -2,15 +2,21 @@
   <ul>
     <% current_user.tasks.each do |task| %>
       <% if task.objective.project_id == @project.id %>
-        <li>
+        <li class="assigned_task" id="task<%= task.id %>">
+
+	  <div class="task_details" id="task<%= task.id %>_details" style="display: block;">
 	  <%= task.objective.name %> :
 	  <%= task.name %>
-	  Due: <%= task.duedate %>
-	  <br/>
+	  Due: <%= task.duedate %>	  
 	  <%= task.description %>
+	  </div>
+
+	  <div class="task_buttons" id="task<%= task.id %>_buttons" style="display: none;">
 	  <button>Mark as completed</button>
 	  <button>Unassign</button>
 	  <button>Request help</button>
+	  </div>
+
 	</li>
       <% end %>
     <% end %>

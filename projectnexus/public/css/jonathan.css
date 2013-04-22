@@ -190,3 +190,8 @@ div.objective_header
     display: none;
     padding-left: 4%;
 }
+
+.task_details
+{
+    height: 22px;
+}

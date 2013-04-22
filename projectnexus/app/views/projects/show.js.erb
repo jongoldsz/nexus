@@ -10,7 +10,9 @@ function run()
 	<% if params[:page] == 'objectives' %>
 	jQuery("#project_content").html("<%= escape_javascript(render 'projects/objectives_tasks/objectives_tasks') %>");
 	enable_objective_buttons();
+	enable_assigned_tasks_hover();
 	/* Load objectives and tasks */
+
 	<% elsif params[:page] == '' %>
 
 	<% else %>

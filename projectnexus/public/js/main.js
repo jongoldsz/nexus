@@ -2,7 +2,27 @@ jQuery(document).ready(function(){
     enable_project_buttons();
     enable_objective_buttons();
     enable_nav_project_buttons();
+    enable_assigned_tasks_hover();
 });
+
+function enable_assigned_tasks_hover()
+{
+    jQuery(".assigned_task").mouseover(function(){
+	var id = jQuery(this).attr("id");
+	if(jQuery("#"+id+"_details").attr("style") == "display: block;")
+	{
+	    jQuery("#"+id+"_details").toggle();
+	    jQuery("#"+id+"_buttons").toggle();
+	}
+    }).mouseout(function(){
+	var id = jQuery(this).attr("id");
+	if(jQuery("#"+id+"_details").attr("style") == "display: none;")
+        {
+            jQuery("#"+id+"_details").toggle();
+            jQuery("#"+id+"_buttons").toggle();
+        }
+    });
+}
 
 function enable_objective_buttons()
 {
