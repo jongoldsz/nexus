@@ -6,6 +6,7 @@
 
 #footer {
 	border-color: #FF5113 ! important;
+	border-top-width: 0px ! important; /* Getting rid of the orange bar at the top of the footer */
 }
 
 body {
