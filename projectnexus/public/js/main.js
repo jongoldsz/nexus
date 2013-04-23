@@ -75,13 +75,13 @@ function enable_contact_mailbox_buttons()
         var project_id = get_project_id();
         if(id == "contact_sent")
         {
-            jQuery.getScript('/projects/'+project_id+'.js?page=mailbox&view=sent', function(data, textStatus, jqxhr) {
+            jQuery.getScript('/projects/'+project_id+'.js?page=mailbox_view&view=sent', function(data, textStatus, jqxhr) {
                 run();
             });
         }
         else if(id == "contact_received")
         {
-            jQuery.getScript('/projects/'+project_id+'.js?page=mailbox&view=received', function(data, textStatus, jqxhr) {
+            jQuery.getScript('/projects/'+project_id+'.js?page=mailbox_view&view=received', function(data, textStatus, jqxhr) {
                 run();
             });
         }

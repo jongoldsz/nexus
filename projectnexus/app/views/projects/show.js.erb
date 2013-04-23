@@ -33,7 +33,7 @@ function run()
            jQuery("#project_content").html("<%= escape_javascript(render 'projects/contact/contact') %>");
 	   enable_contact_mailbox_buttons();
 
-	<% elsif params[:page] == 'mailbox' %>
+	<% elsif params[:page] == 'mailbox_view' %>
 	   jQuery("#project_contact_past_conversations").html("<%= escape_javascript(render 'projects/contact/conversations', :view => params[:view]) %>");
 	   enable_contact_mailbox_buttons();
 
