@@ -352,3 +352,49 @@ div.objective_header
 {
     width: 100px;
 }
+
+#discover_content
+{
+    width: 96%;
+    padding: 2%;
+}
+
+#project_featured
+{
+    width: 96%;
+    padding: 2%;
+}
+
+#project_catagories
+{
+    width: 100%;
+}
+
+.project_catagory_button
+{
+    float: left;
+    width: 15%;
+    height: 30px;
+    border-style: solid;
+    border-width: 1px;
+    margin-left: 3%;
+}
+
+#project_popular_projects
+{
+    clear: both;
+    width: 96%;
+    padding: 2%;
+}
+
+#project_new_projects
+{
+    width: 96%;
+    padding: 2%;
+}
+
+#project_local
+{
+    width: 96%;
+    padding: 2%;
+}

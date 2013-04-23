@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423052746) do
+ActiveRecord::Schema.define(:version => 20130423214451) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(:version => 20130423052746) do
   end
 
   create_table "catagories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -134,8 +140,8 @@ ActiveRecord::Schema.define(:version => 20130423052746) do
     t.string   "miniimage"
     t.integer  "stage_id"
     t.integer  "location_id"
-    t.integer  "catagory_id"
     t.boolean  "featured"
+    t.integer  "category_id"
   end
 
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"

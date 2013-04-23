@@ -10,8 +10,8 @@
   	     </div>
 	     
 	     <div>
-               <%= f.label :catagory %><br />
-               <%= collection_select(:project, :catagory_id, Catagory.all, :id, :name, {:prompt => true}) %>
+               <%= f.label :category %><br />
+               <%= collection_select(:project, :category_id, Category.all, :id, :name, {:prompt => true}) %>
              </div>
 	     
 	     <div>

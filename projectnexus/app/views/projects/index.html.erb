@@ -1,29 +1,27 @@
-<h1>Listing projects</h1>
+<div id="discover_content">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Status</th>
-    <th>Pitch</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <div id="project_featured">
+    Featured/Curated/Sponsored project
+  </div>
+  
+  <div id="project_catagories">
+    <% @categories.each do |category|  %>
+    <div class="project_catagory_button">
+      <%= category.name %>
+    </div>
+    <% end %>
+  </div>
+  
+  <div id="project_popular_projects">
+    Popular projects go here
+  </div>
+  
+  <div id="project_new_projects">
+    New projects go here
+  </div>
+  
+  <div id="project_local">
+    Local projects go here
+  </div>
 
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
-    <td><%= project.status %></td>
-    <td><%= project.pitch %></td>
-    <td><%= project.description %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Project', new_project_path %>
+</div>
