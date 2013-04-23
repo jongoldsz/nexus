@@ -1,4 +1,4 @@
-<% @projects.reverse_each do |project| %>
+<% @projects.last(4).reverse do |project| %>
 
 <div class="project_tile">
   <img src="uploads/'+project.miniimage+'" />
