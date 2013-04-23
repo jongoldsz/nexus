@@ -54,7 +54,11 @@
 	<input class="project_nav_button" type="button" value="Calendar" />
 	<input class="project_nav_button" type="button" value="Recent" />
 	<input class="project_nav_button" type="button" value="Notifications" />
-	<input class="project_nav_button" type="button" value="Contact" />
+	<% if current_user && current_user.id == @project.user_id %>
+	  <input class="project_nav_button" type="button" value="Mailbox" />
+	<% else %>
+	  <input class="project_nav_button" type="button" value="Contact" />
+	<% end %>
       </div>
     </div>
     
