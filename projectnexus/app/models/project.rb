@@ -17,6 +17,7 @@ class Project < ActiveRecord::Base
   has_many :supporters,:foreign_key => "project_id"
   has_many :memberships,:foreign_key => "project_id"
   has_many :blogentries,:foreign_key => "project_id"
+  has_many :messages, :foreign_key => "project_id"
 
   attr_accessible :description, :name, :pitch, :status, :user_id, :miniimage, :location_id, :catagory_id
 end
