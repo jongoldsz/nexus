@@ -1,4 +1,6 @@
 Projectnexus::Application.routes.draw do
+  resources :messages
+
   resources :catagories
 
   resources :locations

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  from_user_id: 1
+  to_user_id: 1
+  subject: MyString
+  message: MyText
+  replied: false
+  project_id: 1
+
+two:
+  from_user_id: 1
+  to_user_id: 1
+  subject: MyString
+  message: MyText
+  replied: false
+  project_id: 1

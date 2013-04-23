@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :tasks, :foreign_key => "user_id"
   has_many :blogentries, :foreign_key => "user_id"
   has_many :resources, :foreign_key => "user_id"
+  has_many :sent_messages, :class_name => 'Message', :foreign_key => "from_user_id"
+  has_many :received_messages, :class_name => 'Message', :foreign_key => "to_user_id"
 
   def self.create_with_omniauth(auth)
     create! do |user|
