@@ -1,4 +1,4 @@
-<% @featured.each do |project| %>
+<% @featured.limit(4).each do |project| %>
 
 <div class="project_tile">
   <img src="uploads/'+project.miniimage+'" />
