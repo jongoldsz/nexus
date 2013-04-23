@@ -17,3 +17,11 @@ body {
 #interactive-image {
 	border-bottom: 4px solid #222222;
 }
+
+div.project_tile {
+	min-width: 185px ! important;
+}
+
+.projects {
+	margin: auto;
+}
