@@ -65,7 +65,26 @@ function enable_assigned_tasks_buttons()
                 run();
             });
 	}
-	console.log(id);
+    });
+}
+
+function enable_contact_mailbox_buttons()
+{
+    jQuery(".contact_messages_button").click(function(){
+        var id = jQuery(this).attr("id");
+        var project_id = get_project_id();
+        if(id == "contact_sent")
+        {
+            jQuery.getScript('/projects/'+project_id+'.js?page=mailbox&view=sent', function(data, textStatus, jqxhr) {
+                run();
+            });
+        }
+        else if(id == "contact_received")
+        {
+            jQuery.getScript('/projects/'+project_id+'.js?page=mailbox&view=received', function(data, textStatus, jqxhr) {
+                run();
+            });
+        }
     });
 }
 

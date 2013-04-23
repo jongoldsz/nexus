@@ -1,0 +1,22 @@
+<a href="#" class="contact_messages_button" id="contact_received">Received</a> | <a href="#" class="contact_messages_button" id="contact_sent">Sent</a>
+
+<% if view == "received" %>
+  <% messages = Message.find(:all, :conditions => ["project_id = ? AND to_user_id = ?", @project.id, current_user.id]) %>
+<% elsif view == "sent" %>
+  <% messages = Message.find(:all, :conditions => ["project_id = ? AND from_user_id = ?", @project.id, current_user.id]) %>
+<% end %>
+
+
+<% if messages %>
+<% messages.each do |message| %>
+<div class="message_thumbnail">
+  <%= message.sender.full_name %>
+  <%= message.sender.created_at.to_date %>
+  <%= message.subject %>
+</div>
+<% end %>
+
+<% else %>
+<br/><br/>
+No messages to display
+<% end %>
