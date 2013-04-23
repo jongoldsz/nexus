@@ -28,6 +28,9 @@ function run()
 
 	<% elsif params[:page] == 'blog' %>
 	jQuery("#project_content").html("<%= escape_javascript(render 'blog') %>");
+
+	<% elsif params[:page] == 'contact' %>
+        jQuery("#project_content").html("<%= escape_javascript(render 'contact') %>");
 	
 	<% elsif params[:page] == '' %>
 

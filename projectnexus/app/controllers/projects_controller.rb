@@ -22,9 +22,11 @@ class ProjectsController < ApplicationController
     if current_user
       @membership = Membership.find_by_project_id_and_user_id(@project.id, current_user.id)
       @supporter = Supporter.find_by_project_id_and_user_id(@project.id, current_user.id)
+      @messages = Message.find_by_project_id_and_to_user_id(@project.id, current_user.id)
     else
       @membership = nil
       @supporter = nil
+      @messages = nil
     end
     @objective = Objective.new
     respond_to do |format|

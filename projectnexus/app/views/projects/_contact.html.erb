@@ -1,0 +1,51 @@
+<% if current_user %>
+
+  <div id="project_contact_past_conversations">
+    Past Conversations <br />
+
+    <% messages = Message.find(:all, :conditions => ["project_id = ? AND to_user_id = ?", @project.id, current_user.id]) %>
+    <% if messages %>
+      <% messages.each do |message| %>
+        <div class="message_thumbnail">
+          <%= message.sender.full_name %>
+	  <%= message.sender.created_at.to_date %>
+	  <%= message.subject %>
+	</div>
+      <% end %>
+    
+    <% else %>
+    <br/><br/>
+    No messages to display
+    <% end %>
+  </div>
+  
+  <div id="project_contact_compose_message">
+    <%= form_for(Message.new) do |f| %>
+
+    <div class="field">
+      From: <%= current_user.full_name %>
+      <%= f.hidden_field :from_user_id, :value => current_user.id %>
+    </div>
+    <div class="field">
+      To:
+      <% if current_user.id != @project.user_id %>
+        <%= @project.user.full_name %>
+        <%= f.hidden_field :to_user_id, :value => @project.user_id %>
+      <% end %>
+    </div>
+    <div class="field">
+      <%= f.label :subject %><br />
+      <%= f.text_field :subject %>
+    </div>
+    <div class="field">
+      <%= f.label :message %><br />
+      <%= f.text_area :message %>
+    </div>
+    <div class="actions">
+      <%= f.hidden_field :project_id, :value => @project.id %>
+      <%= f.submit "Send" %>
+    </div>
+    <% end %>
+  </div>
+  
+<% end %>

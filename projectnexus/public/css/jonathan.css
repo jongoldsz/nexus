@@ -301,3 +301,24 @@ div.objective_header
     padding: 1%;
     margin: 2%;
 }
+
+#project_contact_past_conversations
+{
+    width: 33%;
+    height: 600px;
+    float: left;
+}
+
+#project_contact_compose_message
+{
+    width: 66%;
+    height: 600px;
+    float: left;
+}
+
+.message_thumbnail
+{
+    width: 80%;
+    height: 80px;
+    padding: 10px;
+}
