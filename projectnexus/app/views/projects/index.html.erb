@@ -1,8 +1,9 @@
 <div id="discover_content">
 
   <div id="project_featured">
-    Featured/Curated/Sponsored project:
-    <%= link_to @featured.name, @featured %>
+    Featured/Curated/Sponsored project: <br />
+    
+    <%= render '/shared/project-tiles', :project => @featured %>
   </div>
   
   <div id="project_catagories">

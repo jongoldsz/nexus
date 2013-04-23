@@ -1,5 +1,3 @@
-<% @projects.find(:featured => true).shuffle.each do |project| %>
-
 <div class="project_tile">
   <img src="uploads/'+project.miniimage+'" />
   <div class="project_details">
@@ -17,6 +15,4 @@
     <div class="project_tile_status_completed" style="width: +<%= project.status %>%"></div>
   </div>
 </div>
-
-<% end %>
 

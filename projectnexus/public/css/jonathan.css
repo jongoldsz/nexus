@@ -361,6 +361,7 @@ div.objective_header
 
 #project_featured
 {
+    float: left;
     width: 96%;
     padding: 2%;
 }
