@@ -44,7 +44,7 @@ function enable_user_projects_buttons() // TODO: This function needs to show a d
 function enable_header_project_creation()
 {
     jQuery("#start_a_project_button").click(function(){
-	jQuery("#header-project-creation").slideToggle();
+	jQuery("#create-project-header-dropdown").slideToggle();
     });
 }
 
