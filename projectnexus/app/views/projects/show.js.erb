@@ -12,6 +12,7 @@ function run()
 	enable_objective_buttons();
 	enable_assigned_tasks_hover();
 	enable_assigned_tasks_comments_button();
+	enable_assigned_tasks_buttons();
 	/* Load objectives and tasks */
 
 	<% elsif params[:page] == 'tasks_comment' %>
@@ -19,6 +20,11 @@ function run()
 	<% @task = Task.find(params[:task_id]) %>
 	jQuery("#assigned_task<%= @task.id %>_comments").html("<%= escape_javascript(render 'projects/objectives_tasks/comments/task_comments', :task => @task) %>");
 
+	<% elsif params[:page] == 'tasks' %>
+	jQuery("#assigned_tasks_list").replaceWith("<%= escape_javascript(render 'projects/objectives_tasks/assigned_tasks_list', :show_tasks => params[:view]) %>");
+	enable_assigned_tasks_buttons();
+	enable_assigned_tasks_hover();
+	enable_assigned_tasks_comments_button();
 	<% elsif params[:page] == '' %>
 
 

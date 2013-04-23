@@ -200,3 +200,54 @@ div.objective_header
 {
     display: none;
 }
+
+.assigned_task
+{
+    border-style: solid;
+    border-width: 1px;
+}
+
+#user_photo_left
+{
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+    padding: 1%;
+    width: 18%;
+}
+
+#user_info_right
+{
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+    padding: 1%;
+    width: 77%;
+}
+
+#user_name
+{
+    width: 80%;
+    float: left;
+}
+
+#user_edit
+{
+    width: 20%;
+    float: left;
+}
+
+#user_headline
+{
+    width: 100%;
+}
+
+#user_nav_panel
+{
+    width: 100%;
+}
+
+#user_content
+{
+    clear: both;
+}

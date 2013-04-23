@@ -1,6 +1,7 @@
 <ul>
   <% task.comments.each do |comment| %>
-  <li class="assigned_task" id="assigned_task<%= task.id %>">
+  <li class="assigned_task_comment" id="assigned_task_comment<%= task.id %>">
+    <%= link_to comment.user.full_name, comment.user %> :
     <%= comment.message %>
   </li>
   <% end %>

@@ -1,46 +1,70 @@
 <div id="assigned_tasks_list">
+  <a href="#" class="assigned_tasks_button" id="my_tasks_button">My Tasks</a> | <a href="#" class="assigned_tasks_button" id="all_tasks_button">All Tasks</a>
   <ul>
-    <% current_user.tasks.each do |task| %>
-      <% if task.objective.project_id == @project.id && (task.status.nil? || task.status == false) %>
-        <li class="assigned_task" id="assigned_task<%= task.id %>">
+    <% if show_tasks == "mine" %>
+      <% current_user.tasks.each do |task| %>
+        <% if task.objective.project_id == @project.id && (task.status.nil? || task.status == false) %>
+          <li class="assigned_task" id="assigned_task<%= task.id %>">
+      
+	    <div class="task_details" id="assigned_task<%= task.id %>_details" style="display: block;">
+	      <%= task.objective.name %> :
+	      <%= task.name %>
+	      Due: <%= task.duedate.to_date %>	  
+	      <%= task.description %>
+	    </div>
 
-	  <div class="task_details" id="assigned_task<%= task.id %>_details" style="display: block;">
-	  <%= task.objective.name %> :
-	  <%= task.name %>
-	  Due: <%= task.duedate.to_date %>	  
-	  <%= task.description %>
-	  </div>
+	    <div class="task_buttons" id="assigned_task<%= task.id %>_buttons" style="display: none;">
+	      <%= form_for(task, :remote=>true) do |f| %>
+	        <%= f.hidden_field :status, :value => true  %>
+		<%= f.hidden_field :request_assistance, :value => false %>
+		<%= f.submit "Mark as done" %>
+	      <% end %>
+	      <button class="assigned_task_comments_button" id="assigned_task_<%= task.id %>_comments">Comments</button>
+	      <% if task.request_assistance %>
+	        <%= form_for(task, :remote=>true) do |f| %>
+		  <%= f.hidden_field :request_assistance, :value => false  %>
+		  <%= f.submit "Unrequest assistance" %>
+		<% end %>
+	      <% else %>
+	        <%= form_for(task, :remote=>true) do |f| %>
+		  <%= f.hidden_field :request_assistance, :value => true  %>
+		  <%= f.submit "Request assistance" %>
+                <% end %>
+	      <% end %>
+	      <%= form_for(task, :remote=>true) do |f| %>
+                <%= f.hidden_field :user_id, :value => nil  %>
+                <%= f.submit "Unassign yourself" %>
+              <% end %>
+	    </div>
 
-	  <div class="task_buttons" id="assigned_task<%= task.id %>_buttons" style="display: none;">
-	  <%= form_for(task, :remote=>true) do |f| %>
-	  <%= f.hidden_field :status, :value => true  %>
-	  <%= f.hidden_field :request_assistance, :value => false %>
-	  <%= f.submit "Mark as done" %>
-	  <% end %>
-	  <button class="assigned_task_comments_button" id="assigned_task_<%= task.id %>_comments">Comments</button>
-	  <% if task.request_assistance %>
-	    <%= form_for(task, :remote=>true) do |f| %>
-            <%= f.hidden_field :request_assistance, :value => false  %>
-            <%= f.submit "Unrequest assistance" %>
-            <% end %>
-	  <% else %>
-	    <%= form_for(task, :remote=>true) do |f| %>
-            <%= f.hidden_field :request_assistance, :value => true  %>
-            <%= f.submit "Request assistance" %>
-            <% end %>
-	  <% end %>
-	  <%= form_for(task, :remote=>true) do |f| %>
-          <%= f.hidden_field :user_id, :value => nil  %>
-          <%= f.submit "Unassign yourself" %>
-          <% end %>
-	  </div>
-
-	  <div class="task_comments" id="assigned_task<%= task.id %>_comments">
-	    <%= render 'projects/objectives_tasks/comments/task_comments', :task => task %>
-	  </div>
-
-	</li>
+	    <div class="task_comments" id="assigned_task<%= task.id %>_comments">
+	      <%= render 'projects/objectives_tasks/comments/task_comments', :task => task %>
+	    </div>
+	  </li>
+	<% end %>
       <% end %>
+    <% elsif show_tasks == "all" %>
+	<% @project.objectives.each do |objective| %>
+            <% objective.tasks.each do |task| %>
+              <% if task.user_id %>
+                <li class="assigned_task" id="assigned_task<%= task.id %>">
+		  <div class="task_details" id="assigned_task<%= task.id %>_details" style="display: block;">
+		    <%= task.objective.name %> :
+		    <%= task.name %>
+		    Due: <%= task.duedate.to_date %>
+		    <%= task.description %>
+		  </div>
+		  
+		  <div class="task_buttons" id="assigned_task<%= task.id %>_buttons" style="display: none;">
+		    <button class="assigned_task_comments_button" id="assigned_task_<%= task.id %>_comments">Comments</button>
+		  </div>
+		  <div class="task_comments" id="assigned_task<%= task.id %>_comments">
+		    <%= render 'projects/objectives_tasks/comments/task_comments', :task => task %>
+		  </div>
+		</li>
+	      <% end %>
+            <% end %>
+	<% end %>
     <% end %>
   </ul>
 </div>

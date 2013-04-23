@@ -1,65 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div id="content_area">
+  <div id="user_photo_left">
+    User Photo Here
+  </div>
 
-<p>
-  <b>First:</b>
-  <%= @user.first %>
-</p>
+  <div id ="user_info_right">
+    <div id="user_name">
+      <%= @user.full_name %>
+    </div>
+    <div id="user_edit">
+      <button>Edit</button>
+    </div>
+    <div id="user_headline">
+      User headline/pitch
+    </div>
+    <div id="user_nav_panel">
+      <input class="user_nav_button" type="button" value="Skills/Resources" />
+      <input class="user_nav_button" type="button" value="Projects" />
+      <input class="user_nav_button" type="button" value="Timeline/Past Projects" />
+      <input class="user_nav_button" type="button" value="Updates/Blog" />
+      <input class="user_nav_button" type="button" value="Groups" />
+      <input class="user_nav_button" type="button" value="Badges/Achievements" />
+      <input class="user_nav_button" type="button" value="Contact" />
+    </div>
+  </div>
 
-<p>
-  <b>Middle:</b>
-  <%= @user.middle %>
-</p>
+  <div id="user_content">
+    When user nav links are clicked, their content will show up here.
+  </div>
 
-<p>
-  <b>Last:</b>
-  <%= @user.last %>
-</p>
-
-<p>
-  <b>Honorific:</b>
-  <%= @user.honorific %>
-</p>
-
-<p>
-  <b>Suffix:</b>
-  <%= @user.suffix %>
-</p>
-
-<p>
-  <b>Preferredname:</b>
-  <%= @user.preferredname %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-<p>
-  <b>Address1:</b>
-  <%= @user.address1 %>
-</p>
-
-<p>
-  <b>Address2:</b>
-  <%= @user.address2 %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @user.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @user.state %>
-</p>
-
-<p>
-  <b>Zipcode:</b>
-  <%= @user.zipcode %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>

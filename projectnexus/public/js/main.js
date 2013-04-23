@@ -6,6 +6,27 @@ jQuery(document).ready(function(){
     enable_assigned_tasks_comments_button();
 });
 
+function enable_assigned_tasks_buttons()
+{
+    jQuery(".assigned_tasks_button").click(function(){
+	var id = jQuery(this).attr("id");
+	var project_id = get_project_id();
+	if(id == "all_tasks_button")
+	{
+	    jQuery.getScript('/projects/'+project_id+'.js?page=tasks&view=all', function(data, textStatus, jqxhr) {
+		run();
+            });
+	}
+	else if(id == "my_tasks_button")
+	{
+	    jQuery.getScript('/projects/'+project_id+'.js?page=tasks&view=mine', function(data, textStatus, jqxhr) {
+                run();
+            });
+	}
+	console.log(id);
+    });
+}
+
 function enable_assigned_tasks_comments_button()
 {
     jQuery(".assigned_task_comments_button").click(function(){
