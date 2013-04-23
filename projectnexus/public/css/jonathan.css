@@ -256,6 +256,8 @@ div.objective_header
 #create-project-header-dropdown
 {
     display: none;
+	max-width: 960px;
+	margin:auto;
 }
 
 #user_blurb
