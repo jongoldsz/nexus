@@ -1,0 +1,13 @@
+<div id="user_blurb">User blurb</div>
+<div id="user_skills_resources">User skills and resources</div>
+<div id="user_active_projects">Active projects</div>
+<div id="user_recent_updates">
+<% blogentry = @user.blogentries.order("created_at").last %>
+<% if blogentry %>
+  <%= blogentry.title %> <br />
+  <%= blogentry.content %> <br />
+  <%= blogentry.created_at %> <br />
+  <%= blogentry.project.name %>
+<% end %>
+</div>
+<div id="user_badges_achievements">Badges and achievements</div>

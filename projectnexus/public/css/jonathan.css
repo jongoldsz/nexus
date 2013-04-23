@@ -214,6 +214,7 @@ div.objective_header
     float: left;
     padding: 1%;
     width: 18%;
+    height: 80px;
 }
 
 #user_info_right
@@ -255,4 +256,39 @@ div.objective_header
 #header-project-creation
 {
     display: none;
+}
+
+#user_blurb
+{
+    width: 62%;
+    padding: 2%;
+    float: left;
+}
+
+#user_skills_resources
+{
+    width: 30%;
+    padding: 2%;
+    float: left;
+}
+
+#user_active_projects
+{
+    width: 29%;
+    padding: 2%;
+    float: left;
+}
+
+#user_recent_updates
+{
+    width: 29%;
+    padding: 2%;
+    float: left;
+}
+
+#user_badges_achievements
+{
+    width: 29%;
+    padding: 2%;
+    float: left;
 }

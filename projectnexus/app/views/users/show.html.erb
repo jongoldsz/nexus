@@ -7,9 +7,11 @@
     <div id="user_name">
       <%= @user.full_name %>
     </div>
+    <% if current_user && current_user.id == @user.id %>
     <div id="user_edit">
       <button>Edit</button>
     </div>
+    <% end %>
     <div id="user_headline">
       User headline/pitch
     </div>
@@ -25,7 +27,7 @@
   </div>
 
   <div id="user_content">
-    When user nav links are clicked, their content will show up here.
+    <%= render 'home' %>
   </div>
 
 </div>

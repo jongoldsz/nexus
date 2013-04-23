@@ -5,8 +5,10 @@
 
 function run()
 {
+	<% if params[:page] == 'home' %>
+        jQuery("#user_content").html("<%= escape_javascript(render 'home') %>");
 
-	<% if params[:page] == 'updates/blog' %>
+	<% elsif params[:page] == 'updates/blog' %>
 	jQuery("#user_content").html("<%= escape_javascript(render 'blog') %>");
 	
 	<% elsif params[:page] == '' %>
