@@ -20,6 +20,7 @@ html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a, pre, abbr
 
 body {
   font-family: sans-serif;
+  background-color: #e6e6e6; /*Lee playing around*/
 }
 
 h1, h2, h3, h4, h5, h6, h7 {
