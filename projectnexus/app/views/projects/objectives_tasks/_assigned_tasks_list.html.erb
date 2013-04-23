@@ -1,7 +1,12 @@
 <div id="assigned_tasks_list">
-  <a href="#" class="assigned_tasks_button" id="my_tasks_button">My Tasks</a> | <a href="#" class="assigned_tasks_button" id="all_tasks_button">All Tasks</a>
+
+  <% if current_user %>
+  <a href="#" class="assigned_tasks_button" id="my_tasks_button">My Tasks</a> |
+  <% end %>
+  <a href="#" class="assigned_tasks_button" id="all_tasks_button">All Tasks</a>
+
   <ul>
-    <% if show_tasks == "mine" %>
+    <% if show_tasks == "mine" && current_user %>
       <% current_user.tasks.each do |task| %>
         <% if task.objective.project_id == @project.id && (task.status.nil? || task.status == false) %>
           <li class="assigned_task" id="assigned_task<%= task.id %>">
@@ -43,7 +48,7 @@
 	  </li>
 	<% end %>
       <% end %>
-    <% elsif show_tasks == "all" %>
+    <% elsif show_tasks == "all" || current_user == nil%>
 	<% @project.objectives.each do |objective| %>
             <% objective.tasks.each do |task| %>
               <% if task.user_id %>

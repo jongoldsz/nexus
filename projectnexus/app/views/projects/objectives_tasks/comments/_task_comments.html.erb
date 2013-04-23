@@ -6,14 +6,14 @@
   </li>
   <% end %>
   <li>
-    
-    <%= form_for(Comment.new, :remote=>true) do |f| %>
-    <%= f.label :message %><br />
-    <%= f.text_area :message %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :task_id, :value => task.id %>
-    <%= f.submit "Comment" %>
+    <% if current_user %>
+      <%= form_for(Comment.new, :remote=>true) do |f| %>
+      <%= f.label :message %><br />
+      <%= f.text_area :message %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :task_id, :value => task.id %>
+      <%= f.submit "Comment" %>
+      <% end %>
     <% end %>
-    
   </li>
 </ul>

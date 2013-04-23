@@ -8,18 +8,21 @@
 
     <div id="project_join_support_contact">
       <% if current_user != nil && current_user.id != @project.user_id %>
-      <% if @membership == nil %>
-      <input class="project_button join" type="button" value="Join" />
-      <% else %>
-      <input class="project_button leave" type="button" value="Leave" membership_id="<%= @membership.id %>" />
-      <% end %>
-      <% if @supporter == nil %>
-      <input class="project_button support" type="button" value="Support" />
-      <% else %>
-      <input class="project_button unsupport" type="button" value="Unsupport" supporter_id="<%= @supporter.id %>" />
-      <% end %>
-      <% else %>
-      <input class="project_button edit" type="button" value="Edit" />
+
+        <% if @membership == nil %>
+          <input class="project_button join" type="button" value="Join" />
+	<% else %>
+	  <input class="project_button leave" type="button" value="Leave" membership_id="<%= @membership.id %>" />
+        <% end %>
+      
+	<% if @supporter == nil %>
+	  <input class="project_button support" type="button" value="Support" />
+        <% else %>
+	  <input class="project_button unsupport" type="button" value="Unsupport" supporter_id="<%= @supporter.id %>" />
+        <% end %>
+
+      <% elsif current_user != nil && current_user.id == @project.user_id %>
+        <input class="project_button edit" type="button" value="Edit" />
       <% end %>
     </div>
 

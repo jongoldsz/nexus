@@ -1,6 +1,9 @@
 <div id="available_tasks_list">
-  Other/unassigned tasks: <button class="add_objective"> + Objective </button> <button class="add_task"> + Task </button>
-
+  Other/unassigned tasks:
+  
+  <% if current_user %>
+  <button class="add_objective"> + Objective </button>
+  <button class="add_task"> + Task </button>
 
     <%= form_for(Task.new, :remote=>true) do |f| %>
       <div class="field">
@@ -40,6 +43,7 @@
         <%= f.submit %>
       </div>
     <% end %>
+  <% end %>
 
   <ul>
     <% @project.objectives.each do |objective| %>
@@ -57,10 +61,12 @@
 	    <div class="task_info" id="task<%= task.id %>">
 	      Due date: <%= task.duedate.to_date %> <br/>
 	      Description: <%= task.description %><br/>
-	      <%= form_for(task, :method => :put, :remote=>true) do |f| %>
-	      <%= f.hidden_field :user_id, :value => current_user.id %>
-	      <%= f.hidden_field :request_assistance, :value => false %>
-	      <%= f.submit "Claim" %>
+	      <% if current_user %>
+	        <%= form_for(task, :method => :put, :remote=>true) do |f| %>
+	        <%= f.hidden_field :user_id, :value => current_user.id %>
+	        <%= f.hidden_field :request_assistance, :value => false %>
+	        <%= f.submit "Claim" %>
+	        <% end %>
 	      <% end %>
 	    </div>
 
