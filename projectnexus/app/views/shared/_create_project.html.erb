@@ -2,38 +2,39 @@
 	<div id="header-project-creation" class="clearfix">
 	  
 	<% if current_user %>
-	<%= form_for(Project.new) do |f| %>
+	  <%= form_for(Project.new) do |f| %>
 	
-	<div>
-    	     <%= f.label :name %><br />
-   	     <%= f.text_field :name %>
-  	</div>
+	     <div>
+    	       <%= f.label :name %><br />
+   	       <%= f.text_field :name %>
+  	     </div>
+	     
+	     <div>
+               <%= f.label :catagory %><br />
+               <%= collection_select(:project, :catagory_id, Catagory.all, :id, :name, {:prompt => true}) %>
+             </div>
+	     
+	     <div>
+    	       <%= f.label :pitch %><br />
+    	       <%= f.text_field :pitch %>
+	     </div>
+	     
+	     <div>
+               <%= f.label :location %><br />
+               <%= collection_select(:project, :location_id, Location.all, :id, :name, {:prompt => true}) %>
+             </div>
+	     
+	     <div>
+	       <%= f.hidden_field :status, :value => 0 %>
+	       <%= f.hidden_field :user_id, :value => current_user.id %>
+    	       <%= f.submit "Create" %>
+  	     </div>
 
-	<div>
-                <%= f.label :catagory %><br />
-                <%= collection_select(:project, :catagory_id, Catagory.all, :id, :name, {:prompt => true}) %>
-        </div>
+	  <% end %>
 
-	<div>
-    	     <%= f.label :pitch %><br />
-    	     <%= f.text_field :pitch %>
-	</div>
-
-	<div>
-                <%= f.label :location %><br />
-                <%= collection_select(:project, :location_id, Location.all, :id, :name, {:prompt => true}) %>
-        </div>
-
-	<div>
-	     <%= f.hidden_field :status, :value => 0 %>
-	     <%= f.hidden_field :user_id, :value => current_user.id %>
-    	     <%= f.submit "Create" %>
-  	</div>
-
-	<% end %>
-
-	</div>
 	<% else %>
-	Please login to create a project
+	  Please login to create a project
 	<% end %>
+	
+	</div>
 </div>

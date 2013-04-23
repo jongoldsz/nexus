@@ -6,7 +6,33 @@ jQuery(document).ready(function(){
     enable_nav_user_buttons();
     enable_assigned_tasks_hover();
     enable_assigned_tasks_comments_button();
+    enable_resize_event();
+    enable_user_dropdown_menu();
 });
+
+function enable_resize_event()
+{
+    jQuery(window).resize(function() {
+        if(jQuery("#header_user_dropdown").css("display") == "block") // move the dropdown to the correct location
+	{
+	    set_user_dropdown_position();
+	}
+    });
+}
+function set_user_dropdown_position()
+{
+    var position = jQuery("#header_user_image").position();
+    position.top += jQuery("#header_user_image").height()+14;
+    jQuery("#header_user_dropdown").css("position", "absolute").css("left", position.left).css("top",position.top);
+}
+
+function enable_user_dropdown_menu()
+{
+    jQuery("#header_user_image").click(function(){
+	jQuery("#header_user_dropdown").slideToggle();
+	set_user_dropdown_position();
+    });
+}
 
 function enable_user_projects_buttons() // TODO: This function needs to show a dropdown area with information about the corresponding project
 {

@@ -18,10 +18,25 @@
 				<!-- <div class="header-nav">
                                   <a href="../browse">explore<br><span>more</span></a>
 				</div> -->
+
 			<div class="header-user">
+
 			  <% if current_user %>
+			  <div id="header_user_image"></div>
+
+			  <div id="header_user_dropdown">
+			    <%= link_to "Dashboard", "#" %> <br/>
+			    <%= link_to "Profile", current_user %> <br/>
+			    <%= link_to "Calendar", "#" %> <br/>
+			    <%= link_to "Nexus", "#" %> <br/>
+			    <%= link_to "Add To-Do", "#" %> <br/>
+			    <%= link_to "Logout", signout_path %>
+			  </div>
+
+			  <div id="header_user_name">
 			    <%= current_user.first %>
-			  <%= link_to "Sign out", signout_path %>
+			  </div>
+
 			  <% else %>
 			    <%= link_to "Sign in with Facebook", "/auth/facebook" %>
 			  <% end %>
