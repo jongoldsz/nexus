@@ -1,0 +1,26 @@
+<% @project.blogentries.each do |blogentry| %>
+  <%= blogentry.title %>
+  <%= blogentry.content %>
+  <%= blogentry.user.full_name %>
+  <%= blogentry.created_at.to_date %>
+  <br />
+<% end %>
+
+
+<% if current_user %>
+  <%= form_for(Blogentry.new, :remote => true) do |f| %>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :content %><br />
+      <%= f.text_area :content %>
+    </div>
+    <div class="actions">
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :project_id, :value => @project.id %>
+      <%= f.submit %>
+    </div>
+  <% end %>
+<% end %>

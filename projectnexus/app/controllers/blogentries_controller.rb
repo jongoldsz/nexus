@@ -46,7 +46,8 @@ layout false
 
     respond_to do |format|
       if @blogentry.save
-        format.html { redirect_to "/projects/#{@blogentry.project_id}/blog/#{@blogentry.id}", notice: 'Blogentry was successfully created.' }
+        flash[:target] = "blog"
+        format.html { redirect_to @blogentry.project, notice: 'Blogentry was successfully created.' }
         format.json { render json: @blogentry, status: :created, location: @blogentry }
       else
         format.html { render action: "new" }

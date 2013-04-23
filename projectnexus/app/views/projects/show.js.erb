@@ -25,6 +25,10 @@ function run()
 	enable_assigned_tasks_buttons();
 	enable_assigned_tasks_hover();
 	enable_assigned_tasks_comments_button();
+
+	<% elsif params[:page] == 'blog' %>
+	jQuery("#project_content").html("<%= escape_javascript(render 'blog') %>");
+	
 	<% elsif params[:page] == '' %>
 
 
