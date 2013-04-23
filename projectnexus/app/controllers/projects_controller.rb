@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   def index
     # @projects = Project.all
     @categories = Category.limit(5)
+    @featured = Project.find_by_featured(true)
 
     respond_to do |format|
       format.html # index.html.erb

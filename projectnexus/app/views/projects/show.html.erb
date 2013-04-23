@@ -24,6 +24,12 @@
       <% elsif current_user != nil && current_user.id == @project.user_id %>
         <input class="project_button edit" type="button" value="Edit" />
       <% end %>
+      <% if false && current_user && current_user.id == 1 %>
+        <%= form_for(@project, :remote => true) do |f| %>
+	  <%= f.hidden_field :featured, :value => true %>
+	  <%= f.submit "Make featured" %>
+	<% end %>
+      <% end %>
     </div>
 
   </div>
