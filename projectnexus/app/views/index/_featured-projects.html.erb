@@ -1,4 +1,4 @@
-<% @projects.find(:featured => true).scramble.each do |project| %>
+<% @projects.find(:featured => true).shuffle.each do |project| %>
 
 <div class="project_tile">
   <img src="uploads/'+project.miniimage+'" />
