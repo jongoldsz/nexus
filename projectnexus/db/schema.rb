@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423010224) do
+ActiveRecord::Schema.define(:version => 20130423051739) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(:version => 20130423010224) do
     t.integer  "stage_id"
     t.integer  "location_id"
     t.integer  "catagory_id"
+    t.boolean  "featured"
   end
 
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
