@@ -6,7 +6,11 @@
 		</div>
 			<div class="header-nav-wrap">
 				<div class="header-nav">
-                                  <a href="../projects/new">start a<br><span>projects</span></a>
+					<% if current_user %>
+						<a href="../projects/new">start a<br><span>project</span></a>
+					<% else %>
+						<a href="">learn<br><span>about nexus</span></a>
+					<% end %>
 				</div>
 			        <div class="header-nav">
 				  <a href="../browse">browse<br><span>projects</span></a>
