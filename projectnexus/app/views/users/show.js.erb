@@ -1,0 +1,21 @@
+/* set param to flash target if nil */
+<% if params[:page] == nil %>
+<% params[:page] = flash[:target] %>
+<% end %>
+
+function run()
+{
+
+	<% if params[:page] == 'updates/blog' %>
+	jQuery("#user_content").html("<%= escape_javascript(render 'blog') %>");
+	
+	<% elsif params[:page] == '' %>
+
+
+	<% else %>
+
+	<% end %>
+
+}
+
+run();
