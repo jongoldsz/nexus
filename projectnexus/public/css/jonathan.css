@@ -251,3 +251,8 @@ div.objective_header
 {
     clear: both;
 }
+
+#header-project-creation
+{
+    display: none;
+}

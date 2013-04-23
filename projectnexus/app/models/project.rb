@@ -1,5 +1,4 @@
 class Project < ActiveRecord::Base
-  validates_presence_of :description
   validates_presence_of :name
   validates_presence_of :pitch
   validates_presence_of :status
@@ -12,10 +11,12 @@ class Project < ActiveRecord::Base
   has_many :tags, :through => :projecttags
   has_many :resources, :through => :projectresources
   has_one :stage, :class_name => Stage
+  has_one :catagory, :class_name => Catagory
+  has_one :location, :class_name => Location
   has_many :objectives, :foreign_key => "project_id"
   has_many :supporters,:foreign_key => "project_id"
   has_many :memberships,:foreign_key => "project_id"
   has_many :blogentries,:foreign_key => "project_id"
 
-  attr_accessible :description, :name, :pitch, :status, :user_id, :miniimage
+  attr_accessible :description, :name, :pitch, :status, :user_id, :miniimage, :location_id, :catagory_id
 end

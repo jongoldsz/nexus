@@ -1,10 +1,18 @@
 jQuery(document).ready(function(){
+    enable_header_project_creation();
     enable_project_buttons();
     enable_objective_buttons();
     enable_nav_project_buttons();
     enable_assigned_tasks_hover();
     enable_assigned_tasks_comments_button();
 });
+
+function enable_header_project_creation()
+{
+    jQuery("#start_a_project_button").click(function(){
+	jQuery("#header-project-creation").slideToggle();
+    });
+}
 
 function enable_assigned_tasks_buttons()
 {

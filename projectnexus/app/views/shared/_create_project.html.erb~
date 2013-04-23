@@ -1,0 +1,33 @@
+<div id='create-project-header-dropdown' class='content-wrap clearfix'>
+	<div id="header-project-creation" class="clearfix">
+
+	<%= form_for(Project.new) do |f| %>
+	
+	<div>
+    	     <%= f.label :name %><br />
+   	     <%= f.text_field :name %>
+  	</div>
+
+	<div>
+                <%= f.label :catagory %><br />
+                <%= collection_select(:project, :catagory_id, Catagory.all, :id, :name, {:prompt => true}) %>
+        </div>
+
+	<div>
+    	     <%= f.label :pitch %><br />
+    	     <%= f.text_field :pitch %>
+	</div>
+
+	<div>
+                <%= f.label :location %><br />
+                <%= collection_select(:project, :location_id, Location.all, :id, :name, {:prompt => true}) %>
+        </div>
+
+	<div>
+    	     <%= f.submit "Create" %>
+  	</div>
+
+	<% end %>
+
+	</div>
+</div>
