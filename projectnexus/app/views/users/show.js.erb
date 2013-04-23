@@ -10,6 +10,9 @@ function run()
 
 	<% elsif params[:page] == 'updates/blog' %>
 	jQuery("#user_content").html("<%= escape_javascript(render 'blog') %>");
+
+	<% elsif params[:page] == 'projects' %>
+        jQuery("#user_content").html("<%= escape_javascript(render 'projects') %>");
 	
 	<% elsif params[:page] == '' %>
 

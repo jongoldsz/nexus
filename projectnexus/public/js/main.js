@@ -8,6 +8,13 @@ jQuery(document).ready(function(){
     enable_assigned_tasks_comments_button();
 });
 
+function enable_user_projects_buttons() // TODO: This function needs to show a dropdown area with information about the corresponding project
+{
+    jQuery(".user_project_involvement").click(function(){
+	var id = jQuery(this).attr("id");
+    });
+}
+
 function enable_header_project_creation()
 {
     jQuery("#start_a_project_button").click(function(){

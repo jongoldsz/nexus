@@ -1,0 +1,5 @@
+<% @user.memberships.each do |membership| %>
+  <div class="user_project_involvement" id="user_project_<%= membership.project.id %>">
+  <%= membership.project.name %>
+  </div>
+<% end %>

@@ -292,3 +292,12 @@ div.objective_header
     padding: 2%;
     float: left;
 }
+
+.user_project_involvement
+{
+    float: left;
+    width: 10%;
+    height: 10%;
+    padding: 1%;
+    margin: 2%;
+}
