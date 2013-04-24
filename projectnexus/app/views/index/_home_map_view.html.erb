@@ -1,0 +1,45 @@
+<div class="home_map_view">
+  <div class="info top">
+    new to project nexus?<a href="" class="space-left">sign up</a><br/>
+  </div>
+  <div class="info bottom">
+    <a href="" class="space-right">find out</a> what nexus is all about
+  </div>
+  <div id="map_canvas"></div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+      var co_ordinate = [
+        [
+          "This is title",
+          "more details!",
+          "37.422203",
+          "-122.083983"
+        ]
+      ],
+      mapOptions = {
+        center: new google.maps.LatLng(37.422203,-122.083983),
+        mapTypeId: google.maps.MapTypeId.SATELLITE,
+        zoom: 19,
+        disableDefaultUI: true,
+        scrollwheel: false
+      },
+      map = new google.maps.Map(document.getElementById('map_canvas'),mapOptions);
+      for (var i = 0; i < co_ordinate.length; i++) {
+        var location = co_ordinate[i];
+        var branch = new google.maps.LatLng(location[2], location[3]);
+        var marker = new google.maps.Marker({
+          position: branch,
+          map: map,
+          html: "<div class='map-popup-content'><b>"+location[0]+"</b><br/>"+location[1]+"</div>"
+        });
+        var infowindow = new google.maps.InfoWindow({
+          content: "holding..."
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(this.html);
+          infowindow.open(map,this);
+        });
+      }
+  });
+</script>
