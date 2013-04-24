@@ -5,7 +5,7 @@
   </div>
   
   <div id="project_contact_compose_message">
-    <%= form_for(Message.new) do |f| %>
+    <%= form_for(Message.new, :remote => true) do |f| %>
 
     <div class="field">
       From: <%= current_user.full_name %>

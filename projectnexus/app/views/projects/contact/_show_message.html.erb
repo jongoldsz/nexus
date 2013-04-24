@@ -1,0 +1,13 @@
+<div id="message_thread">
+
+</div>
+
+<div id="message_view">
+  <% @message = Message.find(message_id) %>
+  <%= @message.subject %> <br/>
+  <%= @message.message %>
+</div>
+
+<div id="message_reply">
+
+</div>

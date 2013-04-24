@@ -9,10 +9,20 @@
 
 <% if messages %>
 <% messages.each do |message| %>
-<div class="message_thumbnail">
-  <%= message.sender.full_name %>
-  <%= message.sender.created_at.to_date %>
-  <%= message.subject %>
+<div class="message_thumbnail" id="message_<%= message.id %>">
+  <div class="message_recipient_sender">
+    <% if view == "received" %>
+      <%= message.sender.full_name %>
+    <% elsif view == "sent" %>
+      <%= message.recipient.full_name %>
+    <% end %>
+  </div>
+  <div class="message_date">
+    <%= message.sender.created_at.to_date %>
+  </div>
+  <div class="message_subject">
+    <%= message.subject %>
+  </div>
 </div>
 <% end %>
 

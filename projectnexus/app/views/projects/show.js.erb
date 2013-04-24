@@ -32,10 +32,15 @@ function run()
 	<% elsif params[:page] == 'contact' || params[:page] == 'mailbox' %>
            jQuery("#project_content").html("<%= escape_javascript(render 'projects/contact/contact') %>");
 	   enable_contact_mailbox_buttons();
+	   enable_contact_mailbox_message_viewing();
 
 	<% elsif params[:page] == 'mailbox_view' %>
 	   jQuery("#project_contact_past_conversations").html("<%= escape_javascript(render 'projects/contact/conversations', :view => params[:view]) %>");
 	   enable_contact_mailbox_buttons();
+	   enable_contact_mailbox_message_viewing();
+
+	<% elsif params[:page] == 'mailbox_message'%>
+           jQuery("#project_contact_compose_message").html("<%= escape_javascript(render 'projects/contact/show_message', :message_id => params[:message]) %>");
 
 	<% elsif params[:page] == '' %>
 

@@ -321,8 +321,11 @@ div.objective_header
 .message_thumbnail
 {
     width: 80%;
-    height: 80px;
     padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 #header_user_image
@@ -330,6 +333,8 @@ div.objective_header
     width: 40px;
     height: 40px;
     background-color: red;
+    border-style: solid;
+    border-width: 1px;
     margin-left: 60px;
 }
 
@@ -398,4 +403,22 @@ div.objective_header
 {
     width: 96%;
     padding: 2%;
+}
+
+.message_recipient_sender
+{
+    width: 60%;
+    float: left;
+}
+
+.message_date
+{
+    width: 40%;
+    float: left;
+    text-align: right;
+}
+
+.message_subject
+{
+    width: 100%;
 }

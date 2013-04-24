@@ -88,6 +88,17 @@ function enable_contact_mailbox_buttons()
     });
 }
 
+function enable_contact_mailbox_message_viewing()
+{
+    jQuery(".message_thumbnail").click(function(){
+	var id = jQuery(this).attr("id").split("_");
+	var project_id = get_project_id();
+	jQuery.getScript('/projects/'+project_id+'.js?page=mailbox_message&message='+id[1], function(data, textStatus, jqxhr) {
+            run();
+        });
+    });
+}
+
 function enable_assigned_tasks_comments_button()
 {
     jQuery(".assigned_task_comments_button").click(function(){
