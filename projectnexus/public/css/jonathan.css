@@ -423,3 +423,7 @@ div.objective_header
     width: 100%;
 }
 
+.map-popup-content
+{
+    color: black;
+}

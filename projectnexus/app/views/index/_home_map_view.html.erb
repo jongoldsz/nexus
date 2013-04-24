@@ -1,28 +1,30 @@
 <div class="home_map_view">
-  <div class="info top">
-    new to project nexus?<a href="" class="space-left">sign up</a><br/>
-  </div>
-  <div class="info bottom">
-    <a href="" class="space-right">find out</a> what nexus is all about
-  </div>
   <div id="map_canvas"></div>
 </div>
 <script type="text/javascript">
   $(document).ready(function() {
       var co_ordinate = [
         [
-          "This is title",
-          "more details!",
-          "37.422203",
-          "-122.083983"
+          "Project Nexus",
+          "Community Project Management for All!",
+          "42.732201",
+          "-73.689205"
+        ],
+        [
+          "Center of Gravity",
+          "Making the Tech Valley an irresistible destiniation for young professionals.",
+          "42.732601",
+          "-73.689105"
         ]
       ],
       mapOptions = {
-        center: new google.maps.LatLng(37.422203,-122.083983),
+        center: new google.maps.LatLng(42.732701,-73.689665),
         mapTypeId: google.maps.MapTypeId.SATELLITE,
-        zoom: 19,
+        zoom: 18,
         disableDefaultUI: true,
-        scrollwheel: false
+        scrollwheel: false,
+        draggable: false,
+        heading: 180
       },
       map = new google.maps.Map(document.getElementById('map_canvas'),mapOptions);
       for (var i = 0; i < co_ordinate.length; i++) {
