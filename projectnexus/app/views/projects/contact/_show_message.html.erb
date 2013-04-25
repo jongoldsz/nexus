@@ -8,6 +8,12 @@
   <%= @message.message %>
 </div>
 
-<div id="message_reply">
+<% if current_user == @message.sender %>
+  <% @send_to_user = @message.recipient %>
+<% else %>
+  <% @send_to_user = @message.sender %>
+<% end %>
 
+<div id="message_reply">
+  <%= render 'projects/contact/compose_message', :to_user => @send_to_user, :subject => @message.subject  %>
 </div>

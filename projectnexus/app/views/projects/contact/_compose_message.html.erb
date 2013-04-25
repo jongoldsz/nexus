@@ -1,0 +1,29 @@
+<%= form_for(Message.new, :remote => true) do |f| %>
+
+<div class="field">
+  From: <%= current_user.full_name %>
+  <%= f.hidden_field :from_user_id, :value => current_user.id %>
+</div>
+<div class="field">
+  To:
+  <%= to_user.full_name %>
+  <%= f.hidden_field :to_user_id, :value => to_user.id %>
+</div>
+<div class="field">
+  <% if subject == "" %>
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  <% else %>
+    <%= f.hidden_field :subject, :value => subject %> 
+  <% end %>
+</div>
+<div class="field">
+  <%= f.label :message %><br />
+  <%= f.text_area :message %>
+</div>
+<div class="actions">
+  <%= f.hidden_field :project_id, :value => @project.id %>
+  <%= f.submit "Send" %>
+</div>
+
+<% end %>
