@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   validates_presence_of :first
   validates_presence_of :last
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-  attr_accessible :address1, :address2, :city, :email, :first, :honorific, :last, :middle, :preferredname, :state, :suffix, :zipcode, :provider, :uid
+  attr_accessible :address1, :address2, :city, :email, :first, :honorific, :last, :middle, :preferredname, :state, :suffix, :zipcode, :provider, :uid, :fb_nickname
 
   has_many :authentications, :foreign_key => "user_id"
   has_many :projects, :foreign_key => "user_id"
@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
       user.first = auth["info"]["first_name"]
       user.last = auth["info"]["last_name"]
       user.email = auth["info"]["email"]
+      user.fb_nickname = auth["info"]["nickname"]
     end
   end
 

@@ -1,0 +1,4 @@
+class AddFacebookNicknameToUser < ActiveRecord::Migration
+  def change
+  end
+end
