@@ -18,15 +18,9 @@ class Project < ActiveRecord::Base
   has_many :memberships,:foreign_key => "project_id"
   has_many :blogentries,:foreign_key => "project_id"
   has_many :messages, :foreign_key => "project_id"
-<<<<<<< HEAD
-  has_attached_file :photo, #:style => { :tile => "200x100>" },
-                    :url  => "/assets/images/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/images/:id/:style/:basename.:extension",
-=======
   has_attached_file :photo, :style => { :tile => "200x100#" },
                     :url  => "/assets/images/projects/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/images/projects/:id/:style/:basename.:extension",
->>>>>>> Changed default url for project photos, added automatic image cropping
                     :default_url => "/assets/nexus-logo.png"
 
   attr_accessible :description, :name, :pitch, :status, :user_id, :miniimage, :location_id, :category_id, :featured, :photo
