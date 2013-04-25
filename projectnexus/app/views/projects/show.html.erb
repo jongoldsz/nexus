@@ -30,6 +30,9 @@
 	  <%= f.submit "Make featured" %>
 	<% end %>
       <% end %>
+      <% if false && current_user && current_user.id == 1 %>
+        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
 
   </div>

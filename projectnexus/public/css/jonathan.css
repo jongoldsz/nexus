@@ -451,11 +451,6 @@ div.objective_header
     display: none; 
 }
 
-.project_tile
-{
-    float: left;
-}
-
 .tile-holder
 {
     width: 100%;
