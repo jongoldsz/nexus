@@ -34,6 +34,11 @@
     <%= f.label :miniimage %><br />
     <%= f.text_field :miniimage %>
   </div>
+  <div class="field">
+	<%= form_for @project, :url => users_path, :html => { :multipart => true } do |form| %>
+  		<%= form.file_field :aphoto %>
+	<% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

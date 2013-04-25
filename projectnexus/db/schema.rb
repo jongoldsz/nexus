@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423214451) do
+ActiveRecord::Schema.define(:version => 20130425081522) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -32,12 +32,6 @@ ActiveRecord::Schema.define(:version => 20130423214451) do
     t.datetime "updated_at",  :null => false
     t.integer  "project_id"
     t.integer  "user_id"
-  end
-
-  create_table "catagories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "categories", :force => true do |t|
@@ -134,14 +128,18 @@ ActiveRecord::Schema.define(:version => 20130423214451) do
     t.integer  "status"
     t.text     "pitch"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "user_id"
     t.string   "miniimage"
     t.integer  "stage_id"
     t.integer  "location_id"
     t.boolean  "featured"
     t.integer  "category_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
