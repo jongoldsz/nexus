@@ -1,2 +1,9 @@
-<div id="project_blog_post_status">Current Status</div>
 <div id="project_description"><%= @project.description %></div>
+<div id="project_needs">
+Project Needs:
+<% @project.objectives.each do |objective| %>
+  <% objective.tasks.find(:all, :conditions => "user_id IS NULL").each do |task| %>
+    <%= task.name %> <br />
+  <% end %>
+<% end %>
+</div>
