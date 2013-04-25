@@ -18,7 +18,7 @@ class Project < ActiveRecord::Base
   has_many :memberships,:foreign_key => "project_id"
   has_many :blogentries,:foreign_key => "project_id"
   has_many :messages, :foreign_key => "project_id"
-  has_attached_file :photo, :style => { :tile => "200x100>" },
+  has_attached_file :photo, #:style => { :tile => "200x100>" },
                     :url  => "/assets/images/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/images/:id/:style/:basename.:extension",
                     :default_url => "/assets/nexus-logo.png"
