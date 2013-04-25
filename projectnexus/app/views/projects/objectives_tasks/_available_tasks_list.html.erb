@@ -54,23 +54,8 @@
       <ul>
 	
 	<% objective.tasks.each do |task| %>
-	<% if task.user_id.nil? || task.request_assistance%>
-          <li class="task">
-	    <a href="#" class="expand_task" data-task="#task<%=task.id  %>"><%= task.name %></a>
-	    
-	    <div class="task_info" id="task<%= task.id %>">
-	      Due date: <%= task.duedate.to_date %> <br/>
-	      Description: <%= task.description %><br/>
-	      <% if current_user %>
-	        <%= form_for(task, :method => :put, :remote=>true) do |f| %>
-	        <%= f.hidden_field :user_id, :value => current_user.id %>
-	        <%= f.hidden_field :request_assistance, :value => false %>
-	        <%= f.submit "Claim" %>
-	        <% end %>
-	      <% end %>
-	    </div>
-
-	  </li>
+	  <% if task.user_id.nil? || task.request_assistance %>
+	    <%= render 'projects/objectives_tasks/available_task_expandable', :task => task %>
 	  <% end %>
 	<% end %>
       </ul>

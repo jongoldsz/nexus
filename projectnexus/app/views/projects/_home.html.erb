@@ -4,21 +4,7 @@ Project Needs:
 <% @project.objectives.each do |objective| %>
 <ul>
   <% objective.tasks.find(:all, :conditions => "user_id IS NULL").each do |task| %>
-
-    <li class="task">
-      <a href="#" class="expand_task" data-task="#task<%=task.id  %>"><%= task.name %></a>
-      <div class="task_info" id="task<%= task.id %>">
-        Due date: <%= task.duedate.to_date %> <br/>
-        Description: <%= task.description %><br/>
-        <% if current_user %>
-          <%= form_for(task, :method => :put, :remote=>true) do |f| %>
-            <%= f.hidden_field :user_id, :value => current_user.id %>
-            <%= f.hidden_field :request_assistance, :value => false %>
-            <%= f.submit "Claim" %>
-          <% end %>
-        <% end %>
-      </div>
-    </li>
+    <%= render 'projects/objectives_tasks/available_task_expandable', :task => task %>
   <% end %>
 </ul>
 <% end %>
