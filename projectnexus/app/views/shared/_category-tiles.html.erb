@@ -4,15 +4,15 @@
       <h1 class="section-title">Categories</h1>
     </div>
   </div>
-  <div class="content projects">
-    <div class="section section-projects-area">
+  <div class="content categories">
+    <div class="section section-categories-area">
       <div class="tile-slider-area">
         <div id="categories" class="tile-wrap clearfix">
           <div class="tile-holder" style="width: <%= 440*@categories.count %>px">
 	    <% @categories.each do |category|  %>
-	      <div class="project_tile">
-		<div class="project_details">
-		  <div class="project_tile_title">
+	      <div class="category_tile">
+		<div class="category_details">
+		  <div class="category_tile_title">
 		    <%= link_to category.name, category %>
 		  </div>
 		</div>

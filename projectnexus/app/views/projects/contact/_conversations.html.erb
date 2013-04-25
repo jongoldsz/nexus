@@ -1,32 +1,35 @@
 <a href="#" class="contact_messages_button" id="contact_received">Received</a> | <a href="#" class="contact_messages_button" id="contact_sent">Sent</a>
 
-<% if view == "received" %>
-  <% messages = Message.find(:all, :conditions => ["project_id = ? AND to_user_id = ?", @project.id, current_user.id]) %>
-<% elsif view == "sent" %>
-  <% messages = Message.find(:all, :conditions => ["project_id = ? AND from_user_id = ?", @project.id, current_user.id]) %>
-<% end %>
+  <% if view == "received" %>
+    <% messages = Message.find(:all, :conditions => ["project_id = ? AND to_user_id = ?", @project.id, current_user.id]) %>
+  <% elsif view == "sent" %>
+    <% messages = Message.find(:all, :conditions => ["project_id = ? AND from_user_id = ?", @project.id, current_user.id]) %>
+  <% end %>
 
+<div class="messages_scrollable">
+  <div class="message_container">
+    <% if messages %>
+      <% messages.each do |message| %>
+        <div class="message_thumbnail" id="message_<%= message.id %>">
+	  <div class="message_recipient_sender">
+	    <% if view == "received" %>
+	      <%= message.sender.full_name %>
+	    <% elsif view == "sent" %>
+	      <%= message.recipient.full_name %>
+	    <% end %>
+	  </div>
+	  <div class="message_date">
+	    <%= message.sender.created_at.to_date %>
+	  </div>
+	  <div class="message_subject">
+	    <%= message.subject %>
+	  </div>
+	</div>
+      <% end %>
 
-<% if messages %>
-<% messages.each do |message| %>
-<div class="message_thumbnail" id="message_<%= message.id %>">
-  <div class="message_recipient_sender">
-    <% if view == "received" %>
-      <%= message.sender.full_name %>
-    <% elsif view == "sent" %>
-      <%= message.recipient.full_name %>
+    <% else %>
+      <br/><br/>
+      No messages to display
     <% end %>
   </div>
-  <div class="message_date">
-    <%= message.sender.created_at.to_date %>
-  </div>
-  <div class="message_subject">
-    <%= message.subject %>
-  </div>
 </div>
-<% end %>
-
-<% else %>
-<br/><br/>
-No messages to display
-<% end %>
