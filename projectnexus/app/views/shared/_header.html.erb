@@ -22,7 +22,7 @@
 			<div class="header-user">
 
 			  <% if current_user %>
-			  <img id="header_user_image" src="http://graph.facebook.com/<%= @user.fb_nickname %>/picture" />
+			  <img id="header_user_image" src="http://graph.facebook.com/<%= current_user.fb_nickname %>/picture" />
 
 			  <div id="header_user_dropdown">
 			    <%= link_to "Dashboard", "#" %> <br/>
