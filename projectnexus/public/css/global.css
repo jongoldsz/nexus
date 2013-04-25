@@ -235,7 +235,12 @@ div.project_tile {
   padding-bottom: 7px;
   margin-left: 20px;
   margin-right: 20px;
-  position: relative; }
+  position: relative; 
+}
+
+div.project_tile img{
+  width: 100%;
+}
 
 div.first {
   margin-left: 0;

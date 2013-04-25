@@ -12,24 +12,24 @@
   <div class="content projects">
     <div class="section section-projects-area">
       <div class="tile-slider-area">
-	<div id="<%= type %>-projects" class="tile-wrap clearfix">
-	  <% if type == "featured" %>
-	    <% projects = @featured %>
-	  <% elsif type == "local" %>
-	    <% projects = @projects %>
-	  <% elsif type == "new" %>
-	    <% projects = @projects.last(4).reverse %>
-	  <% elsif type == "popular" %>
+        <div id="<%= type %>-projects" class="tile-wrap clearfix">
+          <% if type == "featured" %>
+            <% projects = @featured %>
+          <% elsif type == "local" %>
+            <% projects = @projects %>
+          <% elsif type == "new" %>
+            <% projects = @projects.last(4).reverse %>
+          <% elsif type == "popular" %>
             <% projects = @projects.first(4).reverse %>
-	  <% elsif type == "categories" %>
+          <% elsif type == "categories" %>
             <% projects = @category.projects %>
-	  <% end %>
-	  <div class="tile-holder" style="width: <%= 440*projects.count %>px">
-	    <% projects.each do |project| %>
-	    <%= render '/shared/project-tiles', :project => project %>
-	    <% end %>
-	  </div>
-	</div>
+          <% end %>
+          <div class="tile-holder" style="width: <%= 440*projects.count %>px">
+            <% projects.each do |project| %>
+              <%= render '/shared/project-tiles', :project => project %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
