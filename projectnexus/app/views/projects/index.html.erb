@@ -1,29 +1,14 @@
-<div id="discover_content">
 
-  <div id="project_featured">
-    Featured/Curated/Sponsored project: <br />
-    
-    <%= render '/shared/project-tiles', :project => @featured %>
-  </div>
-  
-  <div id="project_catagories">
-    <% @categories.each do |category|  %>
-    <div class="project_catagory_button">
-      <%= category.name %>
-    </div>
-    <% end %>
-  </div>
-  
-  <div id="project_popular_projects">
-    Popular projects go here
-  </div>
-  
-  <div id="project_new_projects">
-    New projects go here
-  </div>
-  
-  <div id="project_local">
-    Local projects go here
-  </div>
 
-</div>
+
+<%= render '/shared/projects-container', :type => "featured" %>
+
+  
+<%= render '/shared/category-tiles' %>
+
+<%= render '/shared/projects-container', :type => "popular" %>
+
+<%= render '/shared/projects-container', :type => "new" %>
+
+<%= render '/shared/projects-container', :type => "local" %>
+

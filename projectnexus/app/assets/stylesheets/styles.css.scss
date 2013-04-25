@@ -4,7 +4,7 @@ body{ background: #b2b2b2; }
 }
 a{ color: #FF5113; -moz-transition: color 0.5s; -webkit-transition: cubic-bezier(0.1, 0.1, 0.25, 0.9), color 0.5s; -o-transition: color 0.5s; transition: color 0.5s;}
 a:hover{ color: #FFF; }
-.header{ background: #4c4c4c; color: #FFF; padding: 10px 0; border-bottom: 5px solid #000;
+.header{ background: #4c4c4c; color: #FFF; padding: 10px 0; border-bottom: 0px solid #000;
   .logo { padding: 10px; position: relative;
     img{ max-width: 90%; };
     > span { display: none; color: #b2b2b2; };

@@ -29,7 +29,7 @@ function set_user_dropdown_position()
 function enable_user_dropdown_menu()
 {
     jQuery("#header_user_image").click(function(){
-	jQuery("#header_user_dropdown").slideToggle();
+	jQuery("#header_user_dropdown").slideToggle(200);
 	set_user_dropdown_position();
     });
 }

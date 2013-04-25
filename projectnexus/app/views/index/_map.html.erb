@@ -1,3 +1,61 @@
-    <div id="map">
-		<img src="../imgs/map.png">
+<div class="contact-info">
+  <div id="map_contact_canvas"></div>
+  <div id="contact-info-window-content">
+    <div class="info-window">
+      <h3 class="make-color large-title">tech valley center of gravity</h3>
+      518.123.4567 +890
+      <br/>
+      nexus@techvalleyofgravity.org
+      <h4 class="make-color">maker space</h4>
+      300-354 Fulton St
+      <br/>
+      Troy, New York 12180
+      <div class="social-button">
+        <%= link_to image_tag("twitters.png"), "", class: "twitters" %>
+        <%= link_to image_tag("facebook.png"), "", class: "facebook" %>
+        <%= link_to image_tag("email.png"), "", class: "email" %>
+        <%= link_to image_tag("phone.png"), "", class: "phone" %>
+      </div>
     </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+      var _lat = 42.73249,
+          _lng = -73.689267;
+      var contact = new google.maps.LatLng(_lat,_lng);
+      mapOptions = {
+        center: contact,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        zoom: 15,
+        scrollwheel: false,
+        draggable: false,
+        disableDefaultUI: true
+      },
+      map = new google.maps.Map(document.getElementById('map_contact_canvas'),mapOptions);
+      var marker = new google.maps.Marker({
+        position: contact,
+        map: map
+      });
+      var myOptions = {
+         content: $("#contact-info-window-content").html(),
+         maxWidth: 0,
+         zIndex: null,
+         pixelOffset: new google.maps.Size(20, -295),
+         closeBoxURL:"",
+         boxStyle: {
+            background: "url('/assets/info-window-map.png')",
+            padding: "20px",
+            width: "240px"
+         },
+         enableEventPropagation: false
+      };
+
+      google.maps.event.addListener(marker, "click", function (e) {
+        ib.open(map, this);
+      });
+
+      var ib = new InfoBox(myOptions);
+      ib.open(map, marker);
+  });
+</script>

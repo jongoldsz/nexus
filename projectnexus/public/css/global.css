@@ -229,12 +229,12 @@ h1.section_title {
   text-transform: lowercase; }
 
 div.project_tile {
-  width: 20%;
+  width: 200px;
   background-color: #5b5b5b;
   float: left;
   padding-bottom: 7px;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 20px;
+  margin-right: 20px;
   position: relative; }
 
 div.first {
