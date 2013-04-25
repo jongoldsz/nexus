@@ -70,12 +70,11 @@
 	margin-left: 1%;
 }
 
-#image_and_icon
+#image_and_icon img
 {
 	border-style: solid;
         border-width: 1px;
-	padding: 3%;
-	height: 80px;
+	width: 100%;
 }
 
 #project_status
