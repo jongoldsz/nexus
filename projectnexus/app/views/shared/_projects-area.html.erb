@@ -15,9 +15,9 @@
       <% elsif type == "local" %>
         <% projects = @projects %>
       <% elsif type == "new" %>
-        <% projects = @projects.last(4).reverse %>
+        <% projects = @projects.reverse %>
       <% elsif type == "popular" %>
-        <% projects = @projects.first(4).reverse %>
+        <% projects = @projects %>
       <% elsif type == "categories" %>
         <% projects = @category.projects %>
       <% end %>

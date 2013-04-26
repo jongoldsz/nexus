@@ -5,6 +5,7 @@
         <h1 class="section-title"><%= @category.name %> projects</h1>
       <% else %>
         <h1 class="section-title"><%= type %> projects</h1>
+	<%= link_to "View All", "/collections/#{type}" %>
       <% end %>
     </div>
   </div>
