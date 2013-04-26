@@ -530,10 +530,16 @@ div.category_details
 .project_tile_title:hover a
 {
     top: 10px;
+    -webkit-transition: all 0.4s; 
+    -moz-transition: all 0.4s; 
+    transition: all 0.4s;
 }
 
 .project_tile_title:hover + .project_details
 {
     visibility: visible;
     top: 20px;
+    -webkit-transition: all 0.4s; 
+    -moz-transition: all 0.4s; 
+    transition: all 0.4s;
 }
