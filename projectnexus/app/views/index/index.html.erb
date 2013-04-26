@@ -7,5 +7,12 @@
   <%= render '/shared/projects-container', :type => "local" %>
   <%= render '/shared/projects-container', :type => "new" %>
 </div>
-
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.tile-wrap').iosSlider({
+      desktopClickDrag: true,
+      keyboardControls: true
+    });
+  });
+</script>
 <%= render 'map' %>
