@@ -1,9 +1,9 @@
 <% @project.blogentries.each do |blogentry| %>
-  <%= blogentry.title %>
-  <%= blogentry.content %>
-  <%= blogentry.user.full_name %>
+  <%= blogentry.title %><br />
+  <%= blogentry.content %><br />
+  <%= blogentry.user.full_name %> ---
   <%= blogentry.created_at.to_date %>
-  <br />
+  <br /><br />
 <% end %>
 
 
