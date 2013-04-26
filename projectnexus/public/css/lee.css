@@ -111,14 +111,13 @@ div.project_tile_view_more_link {
 }
 
 .blogentry-left {
-	width:10%;
 	min-width:100px;
 	float:left;
 	padding-top:10px;
 }
 
 .blogentry-right {
-	width:90%;
+	min-width:100px;
 	float:right;
 }
 .blogentry {
