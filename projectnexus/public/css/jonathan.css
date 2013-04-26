@@ -96,12 +96,8 @@
 
 input.project_button
 {
-    width: 20%;
-}
-
-input.project_button.join
-{
-    /* width: 40%; Lee is here breaking things. */
+    width: 40%;
+	min-width: 100px;
 	color: #f7f7f7;
 	padding: 10px 20px;
 	background: #ff5117;
@@ -121,14 +117,19 @@ input.project_button.join
 	cursor: pointer;
 }
 
+input.project_button.join
+{
+    /* width: 40%; Lee is here breaking things. */
+}
+
 input.project_button.leave
 {
-    width: 40%;
+    /*width: 40%;*/
 }
 
 input.project_button.edit 
 {
-    width: 40%;
+    width: 60%;
 }
 
 
