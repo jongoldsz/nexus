@@ -102,11 +102,22 @@ input.project_button
 input.project_button.join
 {
     /* width: 40%; Lee is here breaking things. */
-	width: 100px;
-	height: 100px;
-	background: url('join.svg') no-repeat;
-	border: none;
-	color: #F7F7F7;
+	color: #f7f7f7;
+	padding: 10px 20px;
+	background: #ff5117;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 3px solid #ff5117;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,1);
 	cursor: pointer;
 }
 
