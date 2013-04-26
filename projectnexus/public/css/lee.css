@@ -44,6 +44,32 @@ body {
 	left: 5%;
 }
 
+.project_tile_title:hover
+{
+    top: 0px;
+    height: 200px;
+}
+
+.project_tile_title:hover a
+{
+    top: 10px;
+    left: 0px;
+    background: rgba(0,0,0,0.4);
+    width: 100%;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.project_tile_title:hover + .project_details
+{
+    visibility: visible;
+    top: 20px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
 div.project_details {
 	visibility: hidden;
 	position: absolute;
