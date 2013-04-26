@@ -46,7 +46,11 @@
 			</div>
 			
 			<div id="project_status">
-				<%= @project.blogentries.last.title %>
+				<% if @project.blogentries %>
+					<%= @project.blogentries.last.title %>
+				<% else %>
+					<p>This project is statusless. If you're the admin, go to the blog below to change that</p>
+				<% end %>
 			</div>
 		
 		</div>
