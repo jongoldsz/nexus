@@ -22,7 +22,7 @@ class Project < ActiveRecord::Base
   has_attached_file :photo, :styles => { :original => "400x200>", :tile => "200x200#" },
                     :url  => "/assets/images/projects/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/images/projects/:id/:style/:basename.:extension",
-                    :default_url => "/assets/nexus-logo.png"
+                    :default_url => "/assets/missing-project-image.png"
 
   attr_accessible :description, :name, :pitch, :status, :user_id, :miniimage, :location_id, :category_id, :featured, :photo
 end
