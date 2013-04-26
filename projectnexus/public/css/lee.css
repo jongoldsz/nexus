@@ -103,3 +103,18 @@ div.project_tile_view_more_link {
 	line-height: 125%;
 	margin-bottom: 1em;
 }
+
+.blogentry-left {
+	width:20%;
+	min-width:100px;
+	display:block;
+	float:right;
+	position:relative;
+}
+
+.blogentry-right {
+	width:80%;
+	display:block;
+	float:left;
+	position:relative;
+}

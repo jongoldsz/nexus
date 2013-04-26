@@ -1,10 +1,14 @@
 <% @project.blogentries.reverse.each do |blogentry| %>
-  <h3><%= blogentry.title %></h3><br />
-  <%= blogentry.content %><br />
-  <%= blogentry.user.full_name %> ---
-  <%= blogentry.created_at.to_date %><br />
-  <img id="header_user_image" src="http://graph.facebook.com/<%= blogentry.user.fb_nickname %>/picture" />
-  <br /><br />
+	<div class="blogentry-left">
+  		<img id="header_user_image" src="http://graph.facebook.com/<%= blogentry.user.fb_nickname %>/picture" />
+		<%= blogentry.user.full_name %>
+ 	</div>
+
+	<div class="blogentry-right">
+		<h3><%= blogentry.title %></h3>
+		<%= blogentry.created_at.to_date %> <br />
+		<%= blogentry.content %>
+	</div>
 <% end %>
 
 
