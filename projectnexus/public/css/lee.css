@@ -107,8 +107,6 @@ div.project_tile_view_more_link {
 .blogentry, .blogentry-left, .blogentry-right {
 	display:block;
 	position:relative;
-	padding-bottom:10px;
-	border-bottom-width:3px;
 }
 
 .blogentry-left {
@@ -120,4 +118,8 @@ div.project_tile_view_more_link {
 .blogentry-right {
 	width:75%;
 	float:right;
+}
+.blogentry {
+	padding-bottom:10px;
+	border-bottom-width:3px;
 }

@@ -2,13 +2,11 @@
 	<div class="blogentry">
 		<div class="blogentry-left">
   			<img id="header_user_image" src="http://graph.facebook.com/<%= blogentry.user.fb_nickname %>/picture" />
-			<br />
-			<%= blogentry.user.full_name %>
  		</div>
 
 		<div class="blogentry-right">
 			<h3><%= blogentry.title %></h3>
-			<%= blogentry.created_at.to_date %> <br />
+			Authored by <%= blogentry.user.full_name %> at <%= blogentry.created_at.to_date %> <br />
 			<%= blogentry.content %>
 		</div>
 	</div>
