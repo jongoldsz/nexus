@@ -23,13 +23,13 @@ body {
 }
 
 .project_tile_title {
-	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0.7))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.7) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.7) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.7) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.7) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#b3ffffff',GradientType=0 ); /* IE6-9 */
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.7))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-9 */
 	height: 70px; /* Using fixed pixels */
 	width: 100%;
 	position: absolute; /* Using fixed pixels */
@@ -37,10 +37,22 @@ body {
 }
 
 .project_tile_title a {
-	color: #444444 ! important;
-	font-weight: 600 ! important;
+	color: #F7F7F7 ! important;
 	position: absolute;
 	bottom: 0;
 	font-size: 1.3em;
 	left: 5%;
+}
+
+div.project_details {
+	visibility: hidden;
+	position: absolute;
+	top: 0px;
+}
+
+div.project_tile_view_more_link {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	visibility: hidden;
 }
