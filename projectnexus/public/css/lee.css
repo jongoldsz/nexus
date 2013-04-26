@@ -56,3 +56,9 @@ div.project_tile_view_more_link {
 	right: 0;
 	visibility: hidden;
 }
+
+.static-text, .static-text a {
+	font-size: 1.3em;
+	line-height: 125%;
+	margin-bottom: 1em;
+}
