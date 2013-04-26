@@ -46,9 +46,7 @@
 			</div>
 			
 			<div id="project_status">
-				<% @project.blogentries.last.each do |blogentry| %>
-			  		<%= blogentry.title %>
-				<% end %>
+				<% @project.blogentries.last.title %>
 			</div>
 		
 		</div>
