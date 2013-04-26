@@ -1,10 +1,12 @@
 #content_area
 {
-    padding: 2%;
+    /*padding: 2%;  This is Lee's work. :)
     width: 96%;
     height: 60%;
     float: left;
-    background-color: white;
+    background-color: white;*/
+	height: 60%;
+	float: left;
 }
 
 #project_info_left
@@ -32,13 +34,12 @@
 #project_progress
 {
     margin-top: 1%;
-    border-style: solid;
-    border-width: 1px;
+    background-color: #666666; /* Changed by Lee */
 }
 
 #project_progress_bar
 {
-    border-color: blue;
+    border-color: #FF5113; /* Changed by Lee */
     border-style: solid;
     border-width: 3px;
 }
