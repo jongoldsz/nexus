@@ -255,15 +255,13 @@ div.project_tile_title {
   text-transform: lowercase; }
 
 div.project_details {
-  padding: 10px;
-  height: 130px;
+  padding-top: 5px;
+  height: 160px;
   overflow: hidden; }
 
 div.project_tile_pitch {
-  height: 95px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  color: white;
+  height: 113px;
+  color: #F7F7F7;
   font-weight: 100;
   font-size: 11pt;
   font-stretch: expanded;

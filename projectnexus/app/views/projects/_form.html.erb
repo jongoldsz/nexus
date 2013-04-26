@@ -28,6 +28,10 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
+    <%= f.label :category %><br />
+    <%= collection_select(:project, :category_id, Category.all, :id, :name, {:prompt => true}) %>
+  </div>
+  <div class="field">
     <%= f.hidden_field :user_id, :value => current_user.id %><br />
   </div>
   <div class="field">

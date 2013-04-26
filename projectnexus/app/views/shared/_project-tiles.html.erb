@@ -1,18 +1,22 @@
-<div class="project_tile">
-  <%= image_tag project.photo.url(:tile) %>
-  <div class="project_tile_title">
-    <%= link_to project.name, project %>
-  </div>
-  <div class="project_details">
-    <div class="project_tile_pitch">
-      <%= project.pitch %>
+<%= link_to(project) do %>
+
+  <div class="project_tile">
+    <%= image_tag project.photo.url(:tile) %>
+    <div class="project_tile_info">
+      <div class="project_tile_title"><div class="project_tile_title_bottom"><%=  project.name %></div>
+	<div class="project_details">
+	  <div class="project_tile_pitch">
+	    <%= project.pitch %>
+	  </div>
+	</div>
+      </div>
+    </div>
+    <div class="project_tile_view_more_link">
+      <%= link_to "view more", project %>
+    </div>
+    <div class="project_tile_status">
+      <div class="project_tile_status_completed" style="width: +<%= project.status %>%"></div>
     </div>
   </div>
-  <div class="project_tile_view_more_link">
-    <%= link_to "view more", project %>
-  </div>
-  <div class="project_tile_status">
-    <div class="project_tile_status_completed" style="width: +<%= project.status %>%"></div>
-  </div>
-</div>
 
+<% end %>
