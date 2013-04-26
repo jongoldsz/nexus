@@ -24,7 +24,7 @@
           <% elsif type == "categories" %>
             <% projects = @category.projects %>
           <% end %>
-          <div class="tile-holder" style="width: <%= 440*projects.count %>px">
+          <div class="tile-holder" style="width: <%= 240*projects.count %>px">
             <% projects.each do |project| %>
               <%= render '/shared/project-tiles', :project => project %>
             <% end %>
