@@ -24,14 +24,6 @@
     width: 28%;
 }
 
-#project_name
-{
-    /*border-style: solid;
-    border-width: 1px;*/
-    padding: 1.5%;
-    /*font-size: 200%;*/
-}
-
 #project_progress
 {
     margin-top: 1%;
@@ -43,16 +35,6 @@
     border-color: #FF5113; /* Changed by Lee */
     border-style: solid;
     border-width: 3px;
-}
-
-#project_pitch
-{
-    /*border-style: solid;
-    border-width: 1px;*/
-    padding: 1.5%;
-    display: block;
-	font-size: 1.5em;
-	line-height: 1.5em;
 }
 
 #project_details_area
@@ -296,13 +278,6 @@ div.objective_header
     clear: both;
 }
 
-#create-project-header-dropdown
-{
-    display: none;
-	max-width: 960px;
-	margin:auto;
-}
-
 #user_blurb
 {
     width: 62%;
@@ -369,38 +344,6 @@ div.objective_header
     border-width: 1px;
     margin-top: 1%;
     margin-bottom: 1%;
-}
-
-#header_user_image
-{
-    width: 50px;
-    height: 50px;
-    /*border-style: solid;
-    border-width: 1px;*/
-    margin-left: 50px;
-}
-
-#header_user_name
-{
-    font-size: 8pt;
-    margin-left: 60px;
-}
-
-#header_user_dropdown
-{
-    width: 100px;
-    height: 90px;
-    background-color: #5b5b5b;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    z-index: 10;
-    display: none;
-}
-
-.header-user
-{
-    width: 100px;
 }
 
 #discover_content

@@ -14,7 +14,7 @@ html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a, pre, abbr
   font-weight: inherit;
   font-style: inherit;
   font-size: small;
-  font-family: inherit;
+  font-family: 'source_sans_proregular';
   vertical-align: baseline;
   line-height: normal; }
 
@@ -106,13 +106,15 @@ body {
 .content-wrap {
   background-color: #333;
   border-bottom: 4px solid #222222; }
-  .content-wrap #header-wrap {
+  .content-wrap #header-wrap,
+  .content-wrap #footer-wrap{
     max-width: 960px;
     background: #333;
     padding: 20px 2%;
     margin: auto; }
     .content-wrap #header-wrap #logo-wrap {
-      float: left; }
+      display: inline-block;
+      width: 29.5%; }
       @media screen and (max-width: 600px) {
         .content-wrap #header-wrap #logo-wrap {
           float: none;
@@ -139,9 +141,14 @@ body {
       margin: auto;
       text-align: center;
       width: 100%; } }
+  .content-wrap .header-nav-wrap{
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+    position: relative; }
   .content-wrap .header-nav-wrap .header-nav {
-    float: left;
-    margin: 4px 0 0 5%; }
+    display: inline-block;
+    margin: 5px 0 0 5%; }
     .content-wrap .header-nav-wrap .header-nav a {
       font-size: 20px;
       -moz-transition: all 0.5s;
@@ -149,11 +156,32 @@ body {
       -o-transition: all 0.5s;
       transition: all 0.5s; }
     .content-wrap .header-nav-wrap .header-user {
-	float: right;
-	margin: 0px 0 0 5%;
-	font-size: 20px;
-	color: #FFF;
-	}
+      position: absolute;
+      text-align: center;
+      right: 0;
+      top: 0;
+      width: auto;
+      color: #FFF;
+    }
+    .content-wrap .header-nav-wrap .header-user img{ vertical-align: baseline ; }
+    .content-wrap .header-nav-wrap .header-user img:hover{ cursor: pointer; }
+    .content-wrap .header-nav-wrap #header_user_dropdown{
+        z-index: 1;
+        display: none;
+        position: absolute;
+        right: -1px;
+        top: 82px;
+        padding: 0;
+        margin: 0;
+    }
+    .content-wrap .header-nav-wrap #header_user_dropdown > li{ display: block; }
+    .content-wrap .header-nav-wrap #header_user_dropdown > li > a{ display: block; padding: 10px 40px; background: #333; border-bottom: 1px solid #000; }
+    .content-wrap .header-nav-wrap #header_user_dropdown > li > a:hover{ background: #4E4E4F; }
+    .content-wrap .login-fb-btn{
+      position: absolute;
+      top: 30px;
+      right: 0;
+    }
     .content-wrap .header-nav-wrap .header-nav span {
       color: #FFF;
       font-size: 15px; }
@@ -194,7 +222,7 @@ body {
       .front-projects .content-wrap .content .section p {
         color: #f05a2d; }
   .front-projects .content-wrap .projects {
-    background-color: #343433; }
+    background: url('/assets/part-tab-triangle.png') top center no-repeat #343433; }
   .front-projects .content-wrap .header {
     background-color: #4E4E4F; }
 
@@ -212,14 +240,23 @@ body {
   margin-left: auto;
   margin-right: auto; }
 
-#footer {
-  background: #2d2d2d;
-  height: 70px;
-  border-top-width: 4px;
-  border-top-style: solid;
-  border-color: #9dcb4b;
-  clear: both; }
-
+#section-footer {
+  padding: 20px 0;
+  border-bottom: none !important;
+  border-top: 4px solid #222;
+  color: #FFF;
+  }
+  #footer-wrap .part{
+    display: inline-block;
+    width: 47%;
+  }
+  #footer-wrap .part:first-child{
+    margin-right: 2%;
+  }
+  #footer-wrap .part:last-child{
+    margin-left: 2%;
+    text-align: right;
+  }
 h1.section_title {
   padding-top: 20px;
   margin-left: 50px;
@@ -288,3 +325,22 @@ div.project_tile_status {
 div.project_tile_status_completed {
   height: 7px;
   background-color: #f05a2d; }
+.create-project-bounder{ position: relative; width: 960px; margin: 0 auto; }
+.create-project-bounder > div{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #333;
+    padding: 10px;
+    z-index: 1;
+    color: #FFF;
+}
+.create-project-bounder > div label{ display: block;font-size: 1.5em;color: #FFF; margin: 7px 0; }
+.create-project-bounder > div input,
+.create-project-bounder > div select{ margin: 0 0 10px; }
+.create-project-bounder > div select{ padding: 1%; width: 50.5%; }
+.create-project-bounder > div input[type=text]{ padding: 1%; width: 48%; }
+.create-project-bounder > div input[type=submit]{ padding: 10px 20px; color: #FFF; background: #4E4E4F; border: 2px solid #333; }
+.create-project-bounder > div input[type=submit]:hover{ cursor: pointer; }

@@ -15,7 +15,7 @@
       <%= link_to "view more", project %>
     </div>
     <div class="project_tile_status">
-      <div class="project_tile_status_completed" style="width: +<%= project.status %>%"></div>
+      <div class="project_tile_status_completed" style="width: +<%= project.status.to_s+"%" %>"></div>
     </div>
   </div>
 

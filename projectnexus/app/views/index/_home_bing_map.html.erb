@@ -1,0 +1,40 @@
+<script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0">
+</script>
+<div id='mapDiv' style="position: relative; width:100%; height:500px;"></div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var list = [
+      [
+        '42.730762',
+        '-73.690980'
+      ],
+      [
+        '42.731640',
+        '-73.689025'
+      ],
+      [
+        '42.729804',
+        '-73.692015'
+      ]
+    ];
+    var mapOptions = {
+      credentials: "AuhvTmG29wqEv-HpgUA9dhLZnIPYYgJvRL7-I0KDOCMAod5cLuebX_7l472B4Brj",
+      center: new Microsoft.Maps.Location(42.730762, -73.690980),
+      mapTypeId: Microsoft.Maps.MapTypeId.birdseye,
+      zoom: 18
+    };
+    var map = new Microsoft.Maps.Map(document.getElementById("mapDiv"), mapOptions);
+    var pushpinOptions = { icon: '/assets/marker.png', width: 25, height: 25 };
+    for(i=0; i<list.length; i++){
+      var _lat = list[i][0],
+          _lng = list[i][1],
+          _loc = new Microsoft.Maps.Location(_lat, _lng);
+      var pushpin = new Microsoft.Maps.Pushpin(_loc, pushpinOptions);
+      map.entities.push(pushpin);
+      Microsoft.Maps.Events.addHandler(pushpin, 'click', function(){
+        var getLocation = pushpin.getLocation();
+        alert(getLocation);
+      });
+    }
+  });
+</script>

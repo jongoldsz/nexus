@@ -1,40 +1,31 @@
-<div id='create-project-header-dropdown' class='content-wrap clearfix'>
-	<div id="header-project-creation" class="clearfix">
-	  
-	<% if current_user %>
-	  <%= form_for(Project.new) do |f| %>
-	
-	     <div>
-    	       <%= f.label :name %><br />
-   	       <%= f.text_field :name %>
-  	     </div>
-	     
-	     <div>
-               <%= f.label :category %><br />
-               <%= collection_select(:project, :category_id, Category.all, :id, :name, {:prompt => true}) %>
-             </div>
-	     
-	     <div>
-    	       <%= f.label :pitch %><br />
-    	       <%= f.text_field :pitch %>
-	     </div>
-	     
-	     <div>
-               <%= f.label :location %><br />
-               <%= collection_select(:project, :location_id, Location.all, :id, :name, {:prompt => true}) %>
-             </div>
-	     
-	     <div>
-	       <%= f.hidden_field :status, :value => 0 %>
-	       <%= f.hidden_field :user_id, :value => current_user.id %>
-    	       <%= f.submit "Create" %>
-  	     </div>
-
-	  <% end %>
-
-	<% else %>
-	  Please login to create a project
-	<% end %>
-	
-	</div>
+<div class="create-project-bounder">
+  <div id='create-project-header-dropdown' class='clearfix'>
+    <div id="header-project-creation" class="clearfix">
+      <% if current_user %>
+        <%= form_for(Project.new) do |f| %>
+          <p>
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+          </p>
+          <p>
+            <%= f.label :category %>
+            <%= collection_select(:project, :category_id, Category.all, :id, :name, {:prompt => true}) %>
+          </p>
+          <p>
+            <%= f.label :pitch %>
+            <%= f.text_field :pitch %>
+          </p>
+          <p>
+            <%= f.label :location %>
+            <%= collection_select(:project, :location_id, Location.all, :id, :name, {:prompt => true}) %>
+          </p>
+          <%= f.hidden_field :status, :value => 0 %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.submit "Create" %>
+        <% end %>
+      <% else %>
+        Please login to create a project
+      <% end %>
+    </div>
+  </div>
 </div>
