@@ -41,7 +41,7 @@ Projectnexus::Application.routes.draw do
 
   resources :projects
 
-
+  resources :collections
 
   match '/auth/facebook/callback' => 'authentications#create'
 #  devise_for :users

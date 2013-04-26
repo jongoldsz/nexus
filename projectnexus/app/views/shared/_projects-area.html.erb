@@ -1,0 +1,30 @@
+<div class='content-wrap clearfix'>
+  <div class="content header">
+    <div class="section section-title-area">
+      <% if type == "categories" %>
+        <h1 class="section-title"><%= @category.name %> projects</h1>
+      <% else %>
+        <h1 class="section-title"><%= type %> projects</h1>
+      <% end %>
+    </div>
+  </div>
+  <div class="content projects">
+    <div class="section-projects-area collection-area">
+      <% if type == "featured" %>
+        <% projects = @featured %>
+      <% elsif type == "local" %>
+        <% projects = @projects %>
+      <% elsif type == "new" %>
+        <% projects = @projects.last(4).reverse %>
+      <% elsif type == "popular" %>
+        <% projects = @projects.first(4).reverse %>
+      <% elsif type == "categories" %>
+        <% projects = @category.projects %>
+      <% end %>
+
+      <% projects.each do |project| %>
+        <%= render '/shared/project-tiles', :project => project %>
+      <% end %>
+    </div>
+  </div>
+</div>

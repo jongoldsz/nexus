@@ -1,0 +1,9 @@
+class CollectionsController < ApplicationController
+  def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @project }
+      format.js
+    end
+  end
+end

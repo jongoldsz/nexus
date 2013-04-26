@@ -550,3 +550,8 @@ div.category_details
     overflow: hidden;
     overflow-y: auto;
 }
+
+.collection-area .project_tile
+{
+    margin: 20px;    
+}
