@@ -104,17 +104,21 @@ div.project_tile_view_more_link {
 	margin-bottom: 1em;
 }
 
+.blogentry, .blogentry-left, .blogentry-right {
+	display:block;
+	position:relative;
+}
+
 .blogentry-left {
 	width:20%;
 	min-width:100px;
-	display:block;
 	float:right;
-	position:relative;
 }
 
 .blogentry-right {
 	width:80%;
-	display:block;
 	float:left;
-	position:relative;
+}
+.blogentry {
+	margin-bottom:10px;
 }
