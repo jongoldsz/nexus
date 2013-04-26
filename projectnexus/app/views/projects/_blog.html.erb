@@ -1,4 +1,4 @@
-<% @project.blogentries.each do |blogentry| %>
+<% @project.blogentries.reverse.each do |blogentry| %>
   <%= blogentry.title %><br />
   <%= blogentry.content %><br />
   <%= blogentry.user.full_name %> ---
