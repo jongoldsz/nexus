@@ -32,11 +32,18 @@
 			      <% elsif current_user != nil && current_user.id == @project.user_id %>
 			        <input class="project_button edit" type="button" value="Edit" />
 			      <% end %>
-			      <% if false && current_user && current_user.id == 1 %>
-			        <%= form_for(@project, :remote => true) do |f| %>
-				  <%= f.hidden_field :featured, :value => true %>
-				  <%= f.submit "Make featured" %>
-				<% end %>
+			      <% if current_user && current_user.id <= 5 %>
+				 <% if @project.featured != true %>
+			           <%= form_for(@project, :remote => true) do |f| %>
+			             <%= f.hidden_field :featured, :value => true %>
+				     <%= f.submit "Make featured" %>
+				   <% end %>
+				 <% else %>
+				   <%= form_for(@project, :remote => true) do |f| %>
+				     <%= f.hidden_field :featured, :value => nil %>
+                                     <%= f.submit "Remove featured" %>
+                                   <% end %>
+				 <% end %>
 			      <% end %>
 			      <% if false && current_user && current_user.id == 1 %>
 			        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
