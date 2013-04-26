@@ -7,6 +7,7 @@
     background-color: white;*/
 	height: 60%;
 	float: left;
+	background-color:#888888;
 }
 
 #project_info_left
@@ -46,10 +47,12 @@
 
 #project_pitch
 {
-    border-style: solid;
-    border-width: 1px;
+    /*border-style: solid;
+    border-width: 1px;*/
     padding: 1.5%;
     display: block;
+	font-size: 2em;
+	line-height: 1.5em;
 }
 
 #project_details_area
@@ -176,6 +179,9 @@ input.project_button.edit
     width: 47%;
     padding: 1.5%;
     float: left;
+	font-size:1.3em;
+	line-height:1.3em;
+	margin-bottom:.5em;
 }
 
 li.task

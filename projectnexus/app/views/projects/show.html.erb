@@ -82,14 +82,14 @@
       <div id="project_pitch"><%= @project.pitch %></div>
       
       <div id="project_nav_panel">
-	<input class="project_nav_button" type="button" value="Discussions" />
-	<input class="project_nav_button" type="button" value="Images" />
+	<!--<input class="project_nav_button" type="button" value="Discussions" />
+	<input class="project_nav_button" type="button" value="Images" />-->
 	<input class="project_nav_button" type="button" value="Blog" />
-	<input class="project_nav_button" type="button" value="People" />
+	<!--<input class="project_nav_button" type="button" value="People" />-->
 	<input class="project_nav_button" type="button" value="Objectives" />
-	<input class="project_nav_button" type="button" value="Calendar" />
+	<!--<input class="project_nav_button" type="button" value="Calendar" />
 	<input class="project_nav_button" type="button" value="Recent" />
-	<input class="project_nav_button" type="button" value="Notifications" />
+	<input class="project_nav_button" type="button" value="Notifications" />-->
 	<% if current_user && current_user.id == @project.user_id %>
 	  <input class="project_nav_button" type="button" value="Mailbox" />
 	<% else %>
