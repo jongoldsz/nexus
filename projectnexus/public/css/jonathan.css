@@ -78,10 +78,16 @@
 	width: 100%;
 }
 
+.subtle-text {
+	color:#666666;
+	text-decoration:italic;
+}
+
+
 #project_status
 {
-	border-style: solid;
-	border-width: 1px;
+	/*border-style: solid;
+	border-width: 1px;*/
 	margin: 1%;
 	padding: 2%;
 	clear: both;

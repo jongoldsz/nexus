@@ -49,7 +49,9 @@
 				<% unless @project.blogentries.blank? %>
 					<%= @project.blogentries.last.title %>
 				<% else %>
-					<p>This project is statusless. If you're the admin, go to the blog below to change that</p>
+					<div class="subtle-text">
+						This project is statusless. If you're the admin, go to the blog below to change that!
+					</div>
 				<% end %>
 			</div>
 		
