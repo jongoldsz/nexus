@@ -1,42 +1,59 @@
 <div id="content_area">
   
-  <div id="project_info_left">
-    <div id="project_name"><%= @project.name %></div>
-    <div id="project_progress"><div id="project_progress_bar" style="width: <%= @project.status %>%"></div></div>
-  </div>
-  <div id="project_info_right">
 
-    <div id="project_join_support_contact">
-      <% if current_user != nil && current_user.id != @project.user_id %>
+	<div class="content header">
+		<div class="section section-title-area">
+			<div id="project_info_left">
+			    <div id="project_name">
+					<h1 class="section-title"> <%= @project.name %></h1>
+				</div>
+				<div id="project_progress">
+					<div id="project_progress_bar" style="width: <%= @project.status %>%"></div>
+				</div>
+		  	</div>
+		
+			<div id="project_info_right">
 
-        <% if @membership == nil %>
-          <input class="project_button join" type="button" value="Join" />
-	<% else %>
-	  <input class="project_button leave" type="button" value="Leave" membership_id="<%= @membership.id %>" />
-        <% end %>
-      
-	<% if @supporter == nil %>
-	  <input class="project_button support" type="button" value="Support" />
-        <% else %>
-	  <input class="project_button unsupport" type="button" value="Unsupport" supporter_id="<%= @supporter.id %>" />
-        <% end %>
+			    <div id="project_join_support_contact">
+			      <% if current_user != nil && current_user.id != @project.user_id %>
 
-      <% elsif current_user != nil && current_user.id == @project.user_id %>
-        <input class="project_button edit" type="button" value="Edit" />
-      <% end %>
-      <% if false && current_user && current_user.id == 1 %>
-        <%= form_for(@project, :remote => true) do |f| %>
-	  <%= f.hidden_field :featured, :value => true %>
-	  <%= f.submit "Make featured" %>
-	<% end %>
-      <% end %>
-      <% if false && current_user && current_user.id == 1 %>
-        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </div>
+			        <% if @membership == nil %>
+			          <input class="project_button join" type="button" value="Join" />
+				<% else %>
+				  <input class="project_button leave" type="button" value="Leave" membership_id="<%= @membership.id %>" />
+			        <% end %>
 
-  </div>
-  <div id="project_status">Project status message goes here.</div>
+				<% if @supporter == nil %>
+				  <input class="project_button support" type="button" value="Support" />
+			        <% else %>
+				  <input class="project_button unsupport" type="button" value="Unsupport" supporter_id="<%= @supporter.id %>" />
+			        <% end %>
+
+			      <% elsif current_user != nil && current_user.id == @project.user_id %>
+			        <input class="project_button edit" type="button" value="Edit" />
+			      <% end %>
+			      <% if false && current_user && current_user.id == 1 %>
+			        <%= form_for(@project, :remote => true) do |f| %>
+				  <%= f.hidden_field :featured, :value => true %>
+				  <%= f.submit "Make featured" %>
+				<% end %>
+			      <% end %>
+			      <% if false && current_user && current_user.id == 1 %>
+			        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
+			      <% end %>
+			    </div>
+
+			</div>
+			
+			<div id="project_status">Project status message goes here.</div>
+		
+		</div>
+	</div>
+
+
+ 
+    
+    
   <div id="project_details_area">
 
     <div id="project_details_left">
