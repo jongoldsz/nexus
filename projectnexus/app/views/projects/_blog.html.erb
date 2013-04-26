@@ -1,8 +1,9 @@
 <% @project.blogentries.reverse.each do |blogentry| %>
-  <%= blogentry.title %><br />
+  <h3><%= blogentry.title %></h3><br />
   <%= blogentry.content %><br />
   <%= blogentry.user.full_name %> ---
-  <%= blogentry.created_at.to_date %>
+  <%= blogentry.created_at.to_date %><br />
+  <img id="header_user_image" src="http://graph.facebook.com/<%= blogentry.user.fb_nickname %>/picture" />
   <br /><br />
 <% end %>
 
