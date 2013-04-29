@@ -14,9 +14,9 @@ function enable_resize_event()
 {
     jQuery(window).resize(function() {
         if(jQuery("#header_user_dropdown").css("display") == "block") // move the dropdown to the correct location
-	{
-	    set_user_dropdown_position();
-	}
+        {
+          //set_user_dropdown_position();
+        }
     });
 }
 function set_user_dropdown_position()
@@ -29,8 +29,8 @@ function set_user_dropdown_position()
 function enable_user_dropdown_menu()
 {
     jQuery("#header_user_image").click(function(){
-	jQuery("#header_user_dropdown").slideToggle(200);
-	set_user_dropdown_position();
+      jQuery("#header_user_dropdown").slideToggle(100);
+      //set_user_dropdown_position();
     });
 }
 
