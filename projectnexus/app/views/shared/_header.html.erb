@@ -19,28 +19,24 @@
                                   <a href="../browse">explore<br><span>more</span></a>
 				</div> -->
 
-			<div class="header-user">
-
 			  <% if current_user %>
-			  <img id="header_user_image" src="http://graph.facebook.com/<%= current_user.fb_nickname %>/picture" />
-
-			  <div id="header_user_dropdown">
-			    <%= link_to "Dashboard", "#" %> <br/>
-			    <%= link_to "Profile", current_user %> <br/>
-			    <%= link_to "Calendar", "#" %> <br/>
-			    <%= link_to "Nexus", "static_pages/about" %> <br/>
-			    <%= link_to "Add To-Do", "#" %> <br/>
-			    <%= link_to "Logout", signout_path %>
-			  </div>
-
-			  <div id="header_user_name">
-			    <%= current_user.first %>
-			  </div>
-
+        <div class="header-user">
+          <img id="header_user_image" src="http://graph.facebook.com/<%= current_user.fb_nickname %>/picture" />
+          <div id="header_user_name">
+            <%= current_user.first %>
+          </div>
+        </div>
+        <ul id="header_user_dropdown">
+          <li><%= link_to "Dashboard", "#" %></li>
+          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Calendar", "#" %></li>
+          <li><%= link_to "Nexus", "static_pages/about" %></li>
+          <li><%= link_to "Add To-Do", "#" %></li>
+          <li><%= link_to "Logout", signout_path %></li>
+        </ul>
 			  <% else %>
-			    <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+			    <%= link_to "Sign in with Facebook", "/auth/facebook", class: "login-fb-btn" %>
 			  <% end %>
-			</div>
 		</div>
 	</div>
 </div>
