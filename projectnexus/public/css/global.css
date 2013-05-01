@@ -169,7 +169,7 @@ body {
         z-index: 1;
         display: none;
         position: absolute;
-        right: -1px;
+        right: -2px;
         top: 82px;
         padding: 0;
         margin: 0;
@@ -344,3 +344,10 @@ div.project_tile_status_completed {
 .create-project-bounder > div input[type=text]{ padding: 1%; width: 48%; }
 .create-project-bounder > div input[type=submit]{ padding: 10px 20px; color: #FFF; background: #4E4E4F; border: 2px solid #333; }
 .create-project-bounder > div input[type=submit]:hover{ cursor: pointer; }
+[data-infobox]{ display: none; }
+.infobox-content{ background: url('/assets/info-window-map.png'); width: 270px; position: relative; }
+.infobox-content .project_tile_status{ position: static; }
+.infobox-content .title{ color: #FF5113; text-transform: lowercase; padding: 10px 15px 5px; display: block; font-size: 1.3em; }
+.infobox-content a:hover{ color: #FFF; }
+.infobox-content p{ padding: 0 15px 10px; color: #FFF; }
+.infobox-content .cursor{ position: absolute; bottom: -25px; left: 20px; background: url(/assets/infobox-cursor.png); width: 20px; height: 25px; }

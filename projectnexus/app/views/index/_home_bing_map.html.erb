@@ -1,8 +1,29 @@
 <script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0">
 </script>
 <div id='mapDiv' style="position: relative; width:100%; height:500px;"></div>
+<% for i in 0..2 %>
+  <div data-infobox="<%= i %>">
+    <div class="infobox-content">
+      <div class="project_tile_status">
+        <div class="project_tile_status_completed" style="width: 30%;"></div>
+      </div>
+      <a href="" class="title">Title <%= i %></a>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent justo dui, ultricies vitae ultrices in, iaculis in lorem. Proin eros justo.
+        Praesent justo dui, ultricies vitae ultrices in, iaculis in lorem. Proin eros justo.
+        Praesent justo dui, ultricies vitae ultrices in, iaculis in lorem. Proin eros justo.
+        Praesent justo dui, ultricies vitae ultrices in, iaculis in lorem. Proin eros justo.
+      </p>
+      <div class="cursor"></div>
+    </div>
+  </div>
+<% end %>
 <script type="text/javascript">
   $(document).ready(function(){
+    var pinInfoBox;  //the pop up info box
+    var infoboxLayer = new Microsoft.Maps.EntityCollection();
+    var pinLayer = new Microsoft.Maps.EntityCollection();
+    var apiKey = "AuhvTmG29wqEv-HpgUA9dhLZnIPYYgJvRL7-I0KDOCMAod5cLuebX_7l472B4Brj";
     var list = [
       [
         '42.730762',
@@ -18,23 +39,37 @@
       ]
     ];
     var mapOptions = {
-      credentials: "AuhvTmG29wqEv-HpgUA9dhLZnIPYYgJvRL7-I0KDOCMAod5cLuebX_7l472B4Brj",
-      center: new Microsoft.Maps.Location(42.730762, -73.690980),
+      credentials: apiKey,
+      center: new Microsoft.Maps.Location(list[0][0], list[0][1]),
       mapTypeId: Microsoft.Maps.MapTypeId.birdseye,
       zoom: 18
     };
-    var map = new Microsoft.Maps.Map(document.getElementById("mapDiv"), mapOptions);
+    map = new Microsoft.Maps.Map(document.getElementById("mapDiv"), mapOptions);
+    // Create the info box for the pushpin
+    pinInfobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(0, 0), { visible: false });
+    infoboxLayer.push(pinInfobox);
     var pushpinOptions = { icon: '/assets/marker.png', width: 25, height: 25 };
     for(i=0; i<list.length; i++){
-      var _lat = list[i][0],
-          _lng = list[i][1],
-          _loc = new Microsoft.Maps.Location(_lat, _lng);
-      var pushpin = new Microsoft.Maps.Pushpin(_loc, pushpinOptions);
-      map.entities.push(pushpin);
-      Microsoft.Maps.Events.addHandler(pushpin, 'click', function(){
-        var getLocation = pushpin.getLocation();
-        alert(getLocation);
-      });
+        var _lat = list[i][0],
+            _lng = list[i][1],
+            _loc = new Microsoft.Maps.Location(_lat, _lng);
+        var pushpin = new Microsoft.Maps.Pushpin(_loc, pushpinOptions);
+        pushpin.DataBox = i;
+        pinLayer.push(pushpin);
+        Microsoft.Maps.Events.addHandler(pushpin, 'click', displayInfobox);
     }
+    map.entities.push(pinLayer);
+    map.entities.push(infoboxLayer);
+    /*
+    */
   });
+  function displayInfobox(e) {
+    pinInfobox.setOptions({showPointer:false, visible:true, offset: new Microsoft.Maps.Point(-30,50)});
+    pinInfobox.setHtmlContent($("[data-infobox="+e.target.DataBox+"]").html());
+    pinInfobox.setLocation(e.target.getLocation());
+  }
+
+  function hideInfobox(e) {
+    pinInfobox.setOptions({ visible: false });
+  }
 </script>
