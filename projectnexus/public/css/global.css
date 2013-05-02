@@ -350,4 +350,4 @@ div.project_tile_status_completed {
 .infobox-content .title{ color: #FF5113; text-transform: lowercase; padding: 10px 15px 5px; display: block; font-size: 1.3em; }
 .infobox-content a:hover{ color: #FFF; }
 .infobox-content p{ padding: 0 15px 10px; color: #FFF; }
-.infobox-content .cursor{ position: absolute; bottom: -25px; left: 20px; background: url(/assets/infobox-cursor.png); width: 20px; height: 25px; }
+.infobox-content .cursor{ position: absolute; bottom: -24px; left: 20px; background: url(/assets/infobox-cursor.png); width: 20px; height: 25px; }

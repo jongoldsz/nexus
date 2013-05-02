@@ -240,9 +240,8 @@ div.objective_header
     float: left;
     padding: 1%;
     width: 18%;
-    height: 80px;
 }
-
+#user_photo_left>img{ float: inherit; width: 100%; }
 #user_info_right
 {
     border-style: solid;
@@ -479,7 +478,7 @@ div.objective_header
 
 .social-button
 {
-    margin: 20px 0 0;
+    padding: 15px;
 }
 
 .social-button img

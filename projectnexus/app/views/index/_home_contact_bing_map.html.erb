@@ -1,0 +1,71 @@
+<div id='contactmap' style="position: relative; width:100%; height:400px;"></div>
+<div data-infobox="contact-map">
+  <div class="infobox-content">
+    <a class="title">tech valley center of gravity</a>
+    <p>
+      518.123.4567 +890<br/>nexus@techvalleyofgravity.org
+    </p>
+    <a class="title">maker space</a>
+    <p>
+      300-354 Fulton St<br/>Troy, New York 12180
+    </p>
+    <div class="social-button">
+      <%= link_to image_tag("twitters.png"), "", class: "twitters" %>
+      <%= link_to image_tag("facebook.png"), "", class: "facebook" %>
+      <%= link_to image_tag("email.png"), "", class: "email" %>
+      <%= link_to image_tag("phone.png"), "", class: "phone" %>
+    </div>
+    <div class="cursor"></div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var contact_infoboxLayer = new Microsoft.Maps.EntityCollection();
+    var contact_pinLayer = new Microsoft.Maps.EntityCollection();
+    var contact_apiKey = "ArETe7S-frWyezi-jyCSYAgOnpk7fpfJhFzdQ4nYstUesJN64Wxgsc3iWi73EIXV";
+    var contact_list = [
+      [
+        '42.730762',
+        '-73.690980'
+      ]
+    ];
+    var contact_mapOptions = {
+      credentials: contact_apiKey,
+      center: new Microsoft.Maps.Location(contact_list[0][0], contact_list[0][1]),
+      mapTypeId: Microsoft.Maps.MapTypeId.road,
+      enableClickableLogo: false,
+      enableSearchLogo: false,
+      showCopyright: false,
+      showDashboard: false,
+      showMapTypeSelector: false,
+      zoom: 14
+    };
+    contact_map = new Microsoft.Maps.Map(document.getElementById("contactmap"), contact_mapOptions);
+    // Create the info box for the pushpin
+    contact_pinInfobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(0, 0), { visible: false });
+    contact_infoboxLayer.push(contact_pinInfobox);
+    var pushpinOptions = { icon: '/assets/marker.png', width: 25, height: 25 };
+    for(i=0; i<contact_list.length; i++){
+        var _lat = contact_list[i][0],
+            _lng = contact_list[i][1],
+            _loc = new Microsoft.Maps.Location(_lat, _lng);
+        var contact_pushpin = new Microsoft.Maps.Pushpin(_loc, pushpinOptions);
+        contact_pushpin.DataBox = 'contact-map';
+        contact_pinLayer.push(contact_pushpin);
+        Microsoft.Maps.Events.addHandler(contact_pushpin, 'click', contact_displayInfobox);
+    }
+    contact_map.entities.push(contact_pinLayer);
+    contact_map.entities.push(contact_infoboxLayer);
+    /*
+    */
+  });
+  function contact_displayInfobox(e) {
+    contact_pinInfobox.setOptions({showPointer:false, visible:true, offset: new Microsoft.Maps.Point(-30,75)});
+    contact_pinInfobox.setHtmlContent($("[data-infobox="+e.target.DataBox+"]").html());
+    contact_pinInfobox.setLocation(e.target.getLocation());
+  }
+
+  function contact_hideInfobox(e) {
+    contact_pinInfobox.setOptions({ visible: false });
+  }
+</script>
